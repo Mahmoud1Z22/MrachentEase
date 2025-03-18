@@ -2,10 +2,10 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+class ShopList extends BaseController
 {
     public function index(): string
     {
-        return view('home');
+        return view('shop_list');
     }
 }

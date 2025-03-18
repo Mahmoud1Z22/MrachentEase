@@ -2,10 +2,10 @@
 
 namespace App\Controllers;
 
-class Main_page extends BaseController
+class SignUp extends BaseController
 {
     public function index(): string
     {
-        return view('main_page');
+        return view('sign_up');
     }
 }
