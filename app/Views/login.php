@@ -127,7 +127,7 @@
                        	<ul class="header_list">
                         	<li><a href="compare.html"><i class="ti-control-shuffle"></i><span>Compare</span></a></li>
                             <li><a href="wishlist.html"><i class="ti-heart"></i><span>Wishlist</span></a></li>
-                            <li><a href="login.html"><i class="ti-user"></i><span>Login</span></a></li>
+                            <li><a href="<?php echo site_url('login'); ?>"><i class="ti-user"></i><span>Login</span></a></li>
 						</ul>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
     <div class="bottom_header dark_skin main_menu_uppercase">
     	<div class="container">
             <nav class="navbar navbar-expand-lg"> 
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="<?php echo site_url(''); ?>">
                     <h2>
                         <img src="assets/images/favicon.png" alt="">
                         <b>MarchentEase</b>
@@ -503,7 +503,8 @@
                         <ul class="btn-login list_none text-center">
                             <li><a href="#" class="btn btn-google"><i class="ion-social-googleplus"></i>Google</a></li>
                         </ul>
-                        <div class="form-note text-center">Don't Have an Account? <a href="signup.html">Sign up now</a></div>
+                        <div class="form-note text-center">Don't Have an Account? <a href="<?php echo site_url('sign_up'); ?>">Sign up now</a></div>
+                        
                     </div>
                 </div>
             </div>
