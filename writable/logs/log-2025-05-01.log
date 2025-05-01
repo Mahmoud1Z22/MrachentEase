@@ -1,0 +1,11 @@
+ERROR - 2025-05-01 11:45:14 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-05-01 11:45:14 --> Quantities from form: Array
+(
+    [17] => 2
+    [18] => 1
+)
+
+ERROR - 2025-05-01 11:45:14 --> Processing cart ID: 17 with quantity: 2
+ERROR - 2025-05-01 11:45:14 --> Updated cart item with cart_id: 17 to quantity: 2
+ERROR - 2025-05-01 11:45:14 --> Processing cart ID: 18 with quantity: 1
+ERROR - 2025-05-01 11:45:14 --> Updated cart item with cart_id: 18 to quantity: 1

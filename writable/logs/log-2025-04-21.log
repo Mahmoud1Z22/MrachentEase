@@ -1,0 +1,1112 @@
+ERROR - 2025-04-21 12:43:55 --> mysqli_sql_exception: Unknown column 'shops.id' in 'on clause' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `product...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\MrachentEase\app\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-04-21 12:43:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:43:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:43:55 --> [Caused by] mysqli_sql_exception: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-21 12:45:05 --> mysqli_sql_exception: Unknown column 'shops.id' in 'on clause' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `product...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\MrachentEase\app\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-04-21 12:45:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:45:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:45:05 --> [Caused by] mysqli_sql_exception: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-21 12:45:06 --> mysqli_sql_exception: Unknown column 'shops.id' in 'on clause' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `product...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\MrachentEase\app\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-04-21 12:45:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:45:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:45:06 --> [Caused by] mysqli_sql_exception: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-21 12:45:31 --> mysqli_sql_exception: Unknown column 'shops.id' in 'on clause' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `product...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\MrachentEase\app\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-04-21 12:45:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:45:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:45:31 --> [Caused by] mysqli_sql_exception: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-21 12:45:32 --> mysqli_sql_exception: Unknown column 'shops.id' in 'on clause' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `product...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\MrachentEase\app\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-04-21 12:45:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:45:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:45:32 --> [Caused by] mysqli_sql_exception: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-21 12:46:00 --> mysqli_sql_exception: Unknown column 'shops.id' in 'on clause' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `product...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\MrachentEase\app\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-04-21 12:46:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:46:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:46:00 --> [Caused by] mysqli_sql_exception: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-21 12:50:51 --> mysqli_sql_exception: Unknown column 'shop.id' in 'on clause' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `product...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\MrachentEase\app\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-04-21 12:50:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shop.id' in 'on clause'
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:50:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shop.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:50:51 --> [Caused by] mysqli_sql_exception: Unknown column 'shop.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-21 12:50:52 --> mysqli_sql_exception: Unknown column 'shop.id' in 'on clause' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `product...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\MrachentEase\app\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-04-21 12:50:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shop.id' in 'on clause'
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:50:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shop.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 12:50:52 --> [Caused by] mysqli_sql_exception: Unknown column 'shop.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `product`.`shop_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Home.php(21): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-21 14:30:10 --> mysqli_sql_exception: Unknown column 'shops.id' in 'on clause' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `product...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\MrachentEase\app\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-04-21 14:30:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:30:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:30:10 --> [Caused by] mysqli_sql_exception: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-21 14:31:06 --> mysqli_sql_exception: Unknown column 'shops.id' in 'on clause' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `product...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\MrachentEase\app\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-04-21 14:31:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:31:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:31:06 --> [Caused by] mysqli_sql_exception: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-21 14:31:06 --> mysqli_sql_exception: Unknown column 'shops.id' in 'on clause' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `product...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\MrachentEase\app\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-04-21 14:31:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:31:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:31:06 --> [Caused by] mysqli_sql_exception: Unknown column 'shops.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shops`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-21 14:31:53 --> mysqli_sql_exception: Unknown column 'shop.id' in 'on clause' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `product...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\MrachentEase\app\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-04-21 14:31:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shop.id' in 'on clause'
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:31:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shop.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:31:53 --> [Caused by] mysqli_sql_exception: Unknown column 'shop.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-21 14:31:54 --> mysqli_sql_exception: Unknown column 'shop.id' in 'on clause' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `product...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\MrachentEase\app\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-04-21 14:31:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shop.id' in 'on clause'
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:31:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'shop.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:31:54 --> [Caused by] mysqli_sql_exception: Unknown column 'shop.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = \'2\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `products`.*, `shops`.`shop_name`
+FROM `products`
+JOIN `shops` ON `shop`.`id` = `products`.`shop_id`
+WHERE `products`.`product_id` = :products.product_id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\ProductDetails.php(32): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:45:46 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layout.php"
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layout.php')
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('layout', [], true)
+ 3 APPPATH\Controllers\ProductDetails.php(65): view('layout', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:49:05 --> TypeError: view(): Argument #3 ($options) must be of type array, bool given, called in C:\wamp64\www\MrachentEase\app\Controllers\ProductDetails.php on line 66
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Common.php on line 1157.
+ 1 APPPATH\Controllers\ProductDetails.php(66): view('product_details', [...], true)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:55:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layout.php"
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layout.php')
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('layout', [], true)
+ 3 APPPATH\Controllers\ProductDetails.php(66): view('layout', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:55:46 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layout.php"
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layout.php')
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('layout', [], true)
+ 3 APPPATH\Controllers\ProductDetails.php(66): view('layout', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:55:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layout.php"
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layout.php')
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('layout', [], true)
+ 3 APPPATH\Controllers\ProductDetails.php(66): view('layout', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-21 14:55:53 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layout.php"
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layout.php')
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('layout', [], true)
+ 3 APPPATH\Controllers\ProductDetails.php(66): view('layout', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->index('2')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

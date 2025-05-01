@@ -1,0 +1,266 @@
+ERROR - 2025-04-07 15:56:00 --> mysqli_sql_exception: Column 'full_name' cannot be null in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\SignUp.php(22): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\SignUp->store_user()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignUp))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-04-07 15:56:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'full_name' cannot be null
+[Method: POST, Route: signup/store_user]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (:full_name:, :email:, :password:, :address:, :user_type:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\SignUp.php(22): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SignUp->store_user()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignUp))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-07 15:56:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'full_name' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (NULL, \'root@hotmail.com\', \'$2y$10$1Q4wKk.y8ujcSaTX1TMnZeWPMJe43dcbdvMjts1ouNfCEHAd9WE3u\', NULL, NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (NULL, \'root@hotmail.com\', \'$2y$10$1Q4wKk.y8ujcSaTX1TMnZeWPMJe43dcbdvMjts1ouNfCEHAd9WE3u\', NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (:full_name:, :email:, :password:, :address:, :user_type:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\SignUp.php(22): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SignUp->store_user()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignUp))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-07 15:56:00 --> [Caused by] mysqli_sql_exception: Column 'full_name' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (NULL, \'root@hotmail.com\', \'$2y$10$1Q4wKk.y8ujcSaTX1TMnZeWPMJe43dcbdvMjts1ouNfCEHAd9WE3u\', NULL, NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (NULL, \'root@hotmail.com\', \'$2y$10$1Q4wKk.y8ujcSaTX1TMnZeWPMJe43dcbdvMjts1ouNfCEHAd9WE3u\', NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (NULL, \'root@hotmail.com\', \'$2y$10$1Q4wKk.y8ujcSaTX1TMnZeWPMJe43dcbdvMjts1ouNfCEHAd9WE3u\', NULL, NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (:full_name:, :email:, :password:, :address:, :user_type:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\SignUp.php(22): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SignUp->store_user()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignUp))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-07 15:56:19 --> mysqli_sql_exception: Column 'full_name' cannot be null in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\SignUp.php(22): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\SignUp->store_user()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignUp))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-04-07 15:56:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'full_name' cannot be null
+[Method: POST, Route: signup/store_user]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (:full_name:, :email:, :password:, :address:, :user_type:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\SignUp.php(22): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SignUp->store_user()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignUp))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-07 15:56:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'full_name' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (NULL, \'root@hotmail.com\', \'$2y$10$Yb/cJxNFOuNK.7Nkl4CWgerikxVIpt6u/DJaol3yCQgKzfUTshPIa\', NULL, NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (NULL, \'root@hotmail.com\', \'$2y$10$Yb/cJxNFOuNK.7Nkl4CWgerikxVIpt6u/DJaol3yCQgKzfUTshPIa\', NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (:full_name:, :email:, :password:, :address:, :user_type:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\SignUp.php(22): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SignUp->store_user()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignUp))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-07 15:56:19 --> [Caused by] mysqli_sql_exception: Column 'full_name' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (NULL, \'root@hotmail.com\', \'$2y$10$Yb/cJxNFOuNK.7Nkl4CWgerikxVIpt6u/DJaol3yCQgKzfUTshPIa\', NULL, NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (NULL, \'root@hotmail.com\', \'$2y$10$Yb/cJxNFOuNK.7Nkl4CWgerikxVIpt6u/DJaol3yCQgKzfUTshPIa\', NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (NULL, \'root@hotmail.com\', \'$2y$10$Yb/cJxNFOuNK.7Nkl4CWgerikxVIpt6u/DJaol3yCQgKzfUTshPIa\', NULL, NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (:full_name:, :email:, :password:, :address:, :user_type:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\SignUp.php(22): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SignUp->store_user()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignUp))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-07 16:03:46 --> mysqli_sql_exception: Column 'address' cannot be null in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\SignUp.php(40): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\SignUp->store_user()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignUp))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-04-07 16:03:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'address' cannot be null
+[Method: POST, Route: signup/store_user]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (:full_name:, :email:, :password:, :address:, :user_type:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\SignUp.php(40): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SignUp->store_user()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignUp))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-07 16:03:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'address' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (\'Mahmoud zatari\', \'Mahmoud@hotmail.com\', \'$2y$10$8U.489bdnl4kVKkGR1DCbOOZVT4ZON0j1BppNedEzBIwKi88A0rjG\', NULL, \'customer\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (\'Mahmoud zatari\', \'Mahmoud@hotmail.com\', \'$2y$10$8U.489bdnl4kVKkGR1DCbOOZVT4ZON0j1BppNedEzBIwKi88A0rjG\', NULL, \'customer\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (:full_name:, :email:, :password:, :address:, :user_type:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\SignUp.php(40): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SignUp->store_user()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignUp))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-07 16:03:46 --> [Caused by] mysqli_sql_exception: Column 'address' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (\'Mahmoud zatari\', \'Mahmoud@hotmail.com\', \'$2y$10$8U.489bdnl4kVKkGR1DCbOOZVT4ZON0j1BppNedEzBIwKi88A0rjG\', NULL, \'customer\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (\'Mahmoud zatari\', \'Mahmoud@hotmail.com\', \'$2y$10$8U.489bdnl4kVKkGR1DCbOOZVT4ZON0j1BppNedEzBIwKi88A0rjG\', NULL, \'customer\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (\'Mahmoud zatari\', \'Mahmoud@hotmail.com\', \'$2y$10$8U.489bdnl4kVKkGR1DCbOOZVT4ZON0j1BppNedEzBIwKi88A0rjG\', NULL, \'customer\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`full_name`, `email`, `password`, `address`, `user_type`) VALUES (:full_name:, :email:, :password:, :address:, :user_type:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\SignUp.php(40): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SignUp->store_user()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignUp))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-07 17:15:57 --> ErrorException: Undefined array key "password_hash"
+[Method: POST, Route: login/auth]
+in APPPATH\Controllers\Login.php on line 26.
+ 1 APPPATH\Controllers\Login.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "password_hash"', 'C:\\wamp64\\www\\MrachentEase\\app\\Controllers\\Login.php', 26)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-07 17:17:38 --> ErrorException: Undefined array key "password_hash"
+[Method: POST, Route: login/auth]
+in APPPATH\Controllers\Login.php on line 26.
+ 1 APPPATH\Controllers\Login.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "password_hash"', 'C:\\wamp64\\www\\MrachentEase\\app\\Controllers\\Login.php', 26)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-07 17:17:50 --> ErrorException: Undefined array key "password_hash"
+[Method: POST, Route: login/auth]
+in APPPATH\Controllers\Login.php on line 26.
+ 1 APPPATH\Controllers\Login.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "password_hash"', 'C:\\wamp64\\www\\MrachentEase\\app\\Controllers\\Login.php', 26)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-07 17:18:37 --> ErrorException: Undefined array key "password_hash"
+[Method: POST, Route: login/auth]
+in APPPATH\Controllers\Login.php on line 26.
+ 1 APPPATH\Controllers\Login.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "password_hash"', 'C:\\wamp64\\www\\MrachentEase\\app\\Controllers\\Login.php', 26)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-07 17:21:22 --> ErrorException: Undefined array key "password_hash"
+[Method: POST, Route: login/auth]
+in APPPATH\Controllers\Login.php on line 26.
+ 1 APPPATH\Controllers\Login.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "password_hash"', 'C:\\wamp64\\www\\MrachentEase\\app\\Controllers\\Login.php', 26)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-07 18:06:34 --> ErrorException: Undefined array key "password_hash"
+[Method: POST, Route: login/auth]
+in APPPATH\Controllers\Login.php on line 19.
+ 1 APPPATH\Controllers\Login.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "password_hash"', 'C:\\wamp64\\www\\MrachentEase\\app\\Controllers\\Login.php', 19)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-07 18:06:39 --> ErrorException: Undefined array key "password_hash"
+[Method: POST, Route: login/auth]
+in APPPATH\Controllers\Login.php on line 19.
+ 1 APPPATH\Controllers\Login.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "password_hash"', 'C:\\wamp64\\www\\MrachentEase\\app\\Controllers\\Login.php', 19)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-07 18:11:56 --> ErrorException: Undefined array key "password_hash"
+[Method: POST, Route: login/auth]
+in APPPATH\Controllers\Login.php on line 25.
+ 1 APPPATH\Controllers\Login.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "password_hash"', 'C:\\wamp64\\www\\MrachentEase\\app\\Controllers\\Login.php', 25)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

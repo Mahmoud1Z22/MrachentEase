@@ -1,0 +1,112 @@
+CRITICAL - 2025-04-13 14:37:14 --> ErrorException: Undefined array key "brand_id"
+[Method: GET, Route: marchent_account]
+in APPPATH\Views\marchent_account.php on line 329.
+ 1 APPPATH\Views\marchent_account.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "brand_id"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\marchent_account.php', 329)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\marchent_account.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('marchent_account', [], true)
+ 5 APPPATH\Controllers\MarchentAccount.php(58): view('marchent_account', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-13 14:37:16 --> ErrorException: Undefined array key "brand_id"
+[Method: GET, Route: marchent_account]
+in APPPATH\Views\marchent_account.php on line 329.
+ 1 APPPATH\Views\marchent_account.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "brand_id"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\marchent_account.php', 329)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\marchent_account.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('marchent_account', [], true)
+ 5 APPPATH\Controllers\MarchentAccount.php(58): view('marchent_account', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-13 14:37:25 --> ErrorException: Undefined array key "brand_id"
+[Method: GET, Route: marchent_account]
+in APPPATH\Views\marchent_account.php on line 329.
+ 1 APPPATH\Views\marchent_account.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "brand_id"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\marchent_account.php', 329)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\marchent_account.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('marchent_account', [], true)
+ 5 APPPATH\Controllers\MarchentAccount.php(58): view('marchent_account', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-13 16:42:27 --> ErrorException: Undefined array key "description"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 630.
+ 1 APPPATH\Views\home.php(630): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "description"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 630)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(41): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-13 16:42:39 --> ErrorException: Undefined array key "description"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 630.
+ 1 APPPATH\Views\home.php(630): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "description"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 630)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(41): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-13 16:42:48 --> ErrorException: Undefined array key "description"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 630.
+ 1 APPPATH\Views\home.php(630): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "description"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 630)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(41): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-13 16:42:48 --> ErrorException: Undefined array key "description"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 630.
+ 1 APPPATH\Views\home.php(630): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "description"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 630)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(41): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-13 16:59:44 --> ErrorException: Undefined array key "description"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 630.
+ 1 APPPATH\Views\home.php(630): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "description"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 630)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(41): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

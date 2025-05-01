@@ -1,0 +1,11 @@
+ERROR - 2025-04-27 16:02:35 --> Invalid request method for update: POST
+CRITICAL - 2025-04-27 16:06:52 --> ErrorException: Undefined array key "price"
+[Method: POST, Route: cart/update]
+in APPPATH\Controllers\Cart.php on line 274.
+ 1 APPPATH\Controllers\Cart.php(274): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "price"', 'C:\\wamp64\\www\\MrachentEase\\app\\Controllers\\Cart.php', 274)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->update()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

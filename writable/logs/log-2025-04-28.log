@@ -1,0 +1,644 @@
+CRITICAL - 2025-04-28 12:58:14 --> ErrorException: Undefined variable $cartItem
+[Method: GET, Route: cart]
+in APPPATH\Views\cart.php on line 483.
+ 1 APPPATH\Views\cart.php(483): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cartItem', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php', 483)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('cart', [], true)
+ 5 APPPATH\Controllers\Cart.php(69): view('cart', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-28 13:03:59 --> Invalid request method.
+ERROR - 2025-04-28 13:04:14 --> Invalid request method.
+ERROR - 2025-04-28 14:15:09 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-04-28 14:15:22 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-04-28 14:17:55 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-04-28 14:18:24 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-04-28 14:18:35 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-04-28 14:20:55 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-04-28 14:20:55 --> Invalid request method. Expected POST.
+ERROR - 2025-04-28 14:23:59 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-04-28 14:23:59 --> Invalid request method. Expected POST.
+ERROR - 2025-04-28 14:32:38 --> Incoming POST data: Array
+(
+    [quantity] => Array
+        (
+            [11] => 3
+        )
+
+    [update] => Array
+        (
+            [11] => update
+        )
+
+)
+
+ERROR - 2025-04-28 14:32:38 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-04-28 14:32:38 --> Invalid request method. Expected POST.
+ERROR - 2025-04-28 14:34:54 --> Incoming POST data: Array
+(
+    [quantity] => Array
+        (
+            [11] => 3
+        )
+
+)
+
+ERROR - 2025-04-28 14:34:54 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-04-28 14:34:54 --> Invalid request method. Expected POST.
+ERROR - 2025-04-28 14:37:15 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-04-28 14:37:15 --> Quantities from form: Array
+(
+    [11] => 4
+)
+
+ERROR - 2025-04-28 14:37:15 --> Processing cart ID: 11 with quantity: 4
+ERROR - 2025-04-28 14:37:15 --> Updated cart item with cart_id: 11 to quantity: 4
+ERROR - 2025-04-28 14:37:57 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-04-28 14:37:57 --> Quantities from form: Array
+(
+    [11] => 3
+    [12] => 2
+)
+
+ERROR - 2025-04-28 14:37:57 --> Processing cart ID: 11 with quantity: 3
+ERROR - 2025-04-28 14:37:57 --> Updated cart item with cart_id: 11 to quantity: 3
+ERROR - 2025-04-28 14:37:57 --> Processing cart ID: 12 with quantity: 2
+ERROR - 2025-04-28 14:37:57 --> Updated cart item with cart_id: 12 to quantity: 2
+ERROR - 2025-04-28 14:39:58 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-04-28 14:39:58 --> Quantities from form: Array
+(
+    [11] => 3
+    [12] => 3
+)
+
+ERROR - 2025-04-28 14:39:58 --> Processing cart ID: 11 with quantity: 3
+ERROR - 2025-04-28 14:39:58 --> Updated cart item with cart_id: 11 to quantity: 3
+ERROR - 2025-04-28 14:39:58 --> Processing cart ID: 12 with quantity: 3
+ERROR - 2025-04-28 14:39:58 --> Updated cart item with cart_id: 12 to quantity: 3
+CRITICAL - 2025-04-28 15:10:45 --> ErrorException: Undefined variable $cart_count
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 446.
+ 1 APPPATH\Views\home.php(446): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cart_count', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 446)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(56): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:10:48 --> ErrorException: Undefined variable $cart_count
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 446.
+ 1 APPPATH\Views\home.php(446): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cart_count', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 446)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(56): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:13:46 --> Error: Class "App\Controllers\Cart_model" not found
+[Method: GET, Route: /]
+in APPPATH\Controllers\Home.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:13:47 --> Error: Class "App\Controllers\Cart_model" not found
+[Method: GET, Route: /]
+in APPPATH\Controllers\Home.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:13:47 --> Error: Class "App\Controllers\Cart_model" not found
+[Method: GET, Route: /]
+in APPPATH\Controllers\Home.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:14:06 --> ErrorException: Undefined array key "shop_name"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 677.
+ 1 APPPATH\Views\home.php(677): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "shop_name"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 677)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(103): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:14:06 --> ErrorException: Undefined array key "shop_name"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 677.
+ 1 APPPATH\Views\home.php(677): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "shop_name"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 677)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(103): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:14:18 --> ErrorException: Undefined variable $subtotal
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 480.
+ 1 APPPATH\Views\home.php(480): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $subtotal', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 480)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(102): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:14:19 --> ErrorException: Undefined variable $subtotal
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 480.
+ 1 APPPATH\Views\home.php(480): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $subtotal', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 480)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(102): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:27:17 --> ErrorException: Undefined array key "image"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 529.
+ 1 APPPATH\Views\home.php(529): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 529)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(56): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:27:32 --> ErrorException: Undefined array key "image"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 529.
+ 1 APPPATH\Views\home.php(529): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 529)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(56): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:27:33 --> ErrorException: Undefined array key "image"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 529.
+ 1 APPPATH\Views\home.php(529): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 529)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(56): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:35:06 --> ErrorException: Undefined array key "image"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 529.
+ 1 APPPATH\Views\home.php(529): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 529)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(56): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:38:41 --> ErrorException: Undefined variable $cart_count
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 510.
+ 1 APPPATH\Views\home.php(510): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cart_count', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 510)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(56): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:55:38 --> ErrorException: Undefined array key "image"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 529.
+ 1 APPPATH\Views\home.php(529): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 529)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(56): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 15:55:44 --> ErrorException: Undefined array key "image"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 526.
+ 1 APPPATH\Views\home.php(526): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 526)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(56): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-28 15:56:08 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-04-28 15:56:08 --> Quantities from form: Array
+(
+    [12] => 3
+    [13] => 1
+    [14] => 2
+)
+
+ERROR - 2025-04-28 15:56:08 --> Processing cart ID: 12 with quantity: 3
+ERROR - 2025-04-28 15:56:08 --> Updated cart item with cart_id: 12 to quantity: 3
+ERROR - 2025-04-28 15:56:08 --> Processing cart ID: 13 with quantity: 1
+ERROR - 2025-04-28 15:56:08 --> Updated cart item with cart_id: 13 to quantity: 1
+ERROR - 2025-04-28 15:56:08 --> Processing cart ID: 14 with quantity: 2
+ERROR - 2025-04-28 15:56:08 --> Updated cart item with cart_id: 14 to quantity: 2
+ERROR - 2025-04-28 21:43:45 --> No order_id provided for order-completed page
+ERROR - 2025-04-28 21:43:58 --> No order_id provided for order-completed page
+ERROR - 2025-04-28 21:56:48 --> Invalid request method for placeOrder: POST
+ERROR - 2025-04-28 21:56:53 --> Invalid request method for placeOrder: POST
+ERROR - 2025-04-28 22:00:42 --> mysqli_sql_exception: Unknown column 'status' in 'field list' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\Checkout.php(199): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Checkout->placeOrder()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-04-28 22:00:43 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`marchentease`.`suborders`, CONSTRAINT `suborders_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `su...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `su...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `su...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `su...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\Checkout.php(211): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Checkout->placeOrder()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-04-28 22:00:43 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`marchentease`.`suborder_items`, CONSTRAINT `suborder_items_ibfk_2` FOREIGN KEY (`suborder_id`) REFERENCES `suborders` (`suborder_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `su...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `su...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `su...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `su...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\Checkout.php(223): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Checkout->placeOrder()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-04-28 22:00:43 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`marchentease`.`suborder_items`, CONSTRAINT `suborder_items_ibfk_2` FOREIGN KEY (`suborder_id`) REFERENCES `suborders` (`suborder_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `su...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `su...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `su...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `su...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\Checkout.php(223): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Checkout->placeOrder()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-04-28 22:00:43 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`marchentease`.`suborder_items`, CONSTRAINT `suborder_items_ibfk_2` FOREIGN KEY (`suborder_id`) REFERENCES `suborders` (`suborder_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `su...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `su...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `su...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `su...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\Checkout.php(223): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Checkout->placeOrder()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-04-28 22:00:43 --> Transaction failed during order placement
+ERROR - 2025-04-28 22:00:43 --> Error placing order: Transaction failed. Please try again.
+ERROR - 2025-04-28 22:55:11 --> mysqli_sql_exception: Column 'brand_id' cannot be null in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\MarchentAccount.php(92): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-04-28 22:55:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'brand_id' cannot be null
+[Method: POST, Route: marchent/add_product]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (:shop_id:, :product_name:, :product_description:, :price:, :quantity:, :category_id:, :brand_id:, :dimensions:, :weight:, :stock_status:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\MarchentAccount.php(92): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 22:55:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'brand_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (\'3\', \'watch\', \'hdasjkfh af adkhflhd fkdasjlfh kal f\', \'32\', \'32\', \'2\', NULL, \'2*10*5\', \'2.5\', \'in_stock\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (\'3\', \'watch\', \'hdasjkfh af adkhflhd fkdasjlfh kal f\', \'32\', \'32\', \'2\', NULL, \'2*10*5\', \'2.5\', \'in_stock\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (:shop_id:, :product_name:, :product_description:, :price:, :quantity:, :category_id:, :brand_id:, :dimensions:, :weight:, :stock_status:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\MarchentAccount.php(92): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 22:55:11 --> [Caused by] mysqli_sql_exception: Column 'brand_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (\'3\', \'watch\', \'hdasjkfh af adkhflhd fkdasjlfh kal f\', \'32\', \'32\', \'2\', NULL, \'2*10*5\', \'2.5\', \'in_stock\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (\'3\', \'watch\', \'hdasjkfh af adkhflhd fkdasjlfh kal f\', \'32\', \'32\', \'2\', NULL, \'2*10*5\', \'2.5\', \'in_stock\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (\'3\', \'watch\', \'hdasjkfh af adkhflhd fkdasjlfh kal f\', \'32\', \'32\', \'2\', NULL, \'2*10*5\', \'2.5\', \'in_stock\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (:shop_id:, :product_name:, :product_description:, :price:, :quantity:, :category_id:, :brand_id:, :dimensions:, :weight:, :stock_status:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\MarchentAccount.php(92): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-28 22:55:40 --> mysqli_sql_exception: Column 'brand_id' cannot be null in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\MarchentAccount.php(92): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-04-28 22:55:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'brand_id' cannot be null
+[Method: POST, Route: marchent/add_product]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (:shop_id:, :product_name:, :product_description:, :price:, :quantity:, :category_id:, :brand_id:, :dimensions:, :weight:, :stock_status:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\MarchentAccount.php(92): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 22:55:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'brand_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (\'3\', \'watch\', \'hdasjkfh af adkhflhd fkdasjlfh kal f\', \'32\', \'32\', \'2\', NULL, \'2*10*5\', \'2.5\', \'in_stock\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (\'3\', \'watch\', \'hdasjkfh af adkhflhd fkdasjlfh kal f\', \'32\', \'32\', \'2\', NULL, \'2*10*5\', \'2.5\', \'in_stock\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (:shop_id:, :product_name:, :product_description:, :price:, :quantity:, :category_id:, :brand_id:, :dimensions:, :weight:, :stock_status:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\MarchentAccount.php(92): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 22:55:40 --> [Caused by] mysqli_sql_exception: Column 'brand_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (\'3\', \'watch\', \'hdasjkfh af adkhflhd fkdasjlfh kal f\', \'32\', \'32\', \'2\', NULL, \'2*10*5\', \'2.5\', \'in_stock\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (\'3\', \'watch\', \'hdasjkfh af adkhflhd fkdasjlfh kal f\', \'32\', \'32\', \'2\', NULL, \'2*10*5\', \'2.5\', \'in_stock\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (\'3\', \'watch\', \'hdasjkfh af adkhflhd fkdasjlfh kal f\', \'32\', \'32\', \'2\', NULL, \'2*10*5\', \'2.5\', \'in_stock\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`shop_id`, `product_name`, `product_description`, `price`, `quantity`, `category_id`, `brand_id`, `dimensions`, `weight`, `stock_status`) VALUES (:shop_id:, :product_name:, :product_description:, :price:, :quantity:, :category_id:, :brand_id:, :dimensions:, :weight:, :stock_status:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\MarchentAccount.php(92): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-28 23:04:44 --> mysqli_sql_exception: Column 'image2' cannot be null in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\MarchentAccount.php(122): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-04-28 23:04:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'image2' cannot be null
+[Method: POST, Route: marchent/add_product]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (:product_id:, :image:, :image2:, :image3:, :image4:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\MarchentAccount.php(122): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 23:04:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'image2' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (14, \'/uploads/products/1745881484_1bbbdb69e3d518b927f9.jpeg\', NULL, NULL, NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (14, \'/uploads/products/1745881484_1bbbdb69e3d518b927f9.jpeg\', NULL, NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (:product_id:, :image:, :image2:, :image3:, :image4:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\MarchentAccount.php(122): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 23:04:44 --> [Caused by] mysqli_sql_exception: Column 'image2' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (14, \'/uploads/products/1745881484_1bbbdb69e3d518b927f9.jpeg\', NULL, NULL, NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (14, \'/uploads/products/1745881484_1bbbdb69e3d518b927f9.jpeg\', NULL, NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (14, \'/uploads/products/1745881484_1bbbdb69e3d518b927f9.jpeg\', NULL, NULL, NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (:product_id:, :image:, :image2:, :image3:, :image4:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\MarchentAccount.php(122): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-28 23:12:20 --> mysqli_sql_exception: Column 'image2' cannot be null in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\MarchentAccount.php(122): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-04-28 23:12:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'image2' cannot be null
+[Method: POST, Route: marchent/add_product]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (:product_id:, :image:, :image2:, :image3:, :image4:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\MarchentAccount.php(122): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 23:12:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'image2' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (16, \'/uploads/products/1745881940_fc3c2c761c7f8df12053.jpeg\', NULL, NULL, NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (16, \'/uploads/products/1745881940_fc3c2c761c7f8df12053.jpeg\', NULL, NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (:product_id:, :image:, :image2:, :image3:, :image4:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\MarchentAccount.php(122): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 23:12:20 --> [Caused by] mysqli_sql_exception: Column 'image2' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (16, \'/uploads/products/1745881940_fc3c2c761c7f8df12053.jpeg\', NULL, NULL, NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (16, \'/uploads/products/1745881940_fc3c2c761c7f8df12053.jpeg\', NULL, NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (16, \'/uploads/products/1745881940_fc3c2c761c7f8df12053.jpeg\', NULL, NULL, NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `product_images` (`product_id`, `image`, `image2`, `image3`, `image4`) VALUES (:product_id:, :image:, :image2:, :image3:, :image4:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\MarchentAccount.php(122): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->add_product()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

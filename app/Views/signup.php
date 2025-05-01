@@ -444,26 +444,7 @@
 </header>
 <!-- END HEADER -->
 
-<!-- START SECTION BREADCRUMB -->
-<div class="breadcrumb_section bg_gray page-title-mini">
-    <div class="container"><!-- STRART CONTAINER -->
-        <div class="row align-items-center">
-        	<div class="col-md-6">
-                <div class="page-title">
-            		<h1>Register</h1>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <ol class="breadcrumb justify-content-md-end">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active">Register</li>
-                </ol>
-            </div>
-        </div>
-    </div><!-- END CONTAINER-->
-</div>
-<!-- END SECTION BREADCRUMB -->
+
 
 <!-- START MAIN CONTENT -->
 <div class="main_content">
@@ -474,35 +455,42 @@
         <div class="row justify-content-center">
             <div class="col-xl-6 col-md-10">
                 <div class="login_wrap">
-            		<div class="padding_eight_all bg-white">
+                    <div class="padding_eight_all bg-white">
                         <div class="heading_s1">
                             <h3>Create an Account</h3>
                         </div>
-                        <form method="post">
+                        <div id="error-message" style="color: red; display: none; margin-bottom: 15px;"></div>
+                        <form action="<?php echo base_url('signup/store_user'); ?>" method="post" onsubmit="return validateForm()">
                             <div class="form-group">
-                                <select class="form-control" name="name" required="">
-                                    <option value="" disabled selected>Select Your type</option>
+                                <select class="form-control" name="user_type" required>
+                                    <option value="" disabled selected>Select Your Type</option>
                                     <option value="customer">Customer</option>
-                                    <option value="marchent">Marchent</option>
+                                    <option value="merchant">Merchant</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <input type="text" required="" class="form-control" name="name" placeholder="Enter Your Name">
+                                <input type="text" required class="form-control" name="first_name" placeholder="Enter Your first name">
                             </div>
                             <div class="form-group">
-                                <input type="text" required="" class="form-control" name="email" placeholder="Enter Your Email">
+                                <input type="text" required class="form-control" name="last_name" placeholder="Enter Your last name">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" required="" type="password" name="password" placeholder="Password">
+                                <input type="text" required class="form-control" name="userName" placeholder="Enter Your user Name">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" required="" type="password" name="password" placeholder="Confirm Password">
+                                <input type="email" required class="form-control" name="email" placeholder="Enter Your Email">
+                            </div> 
+                            <div class="form-group">
+                                <input class="form-control" required type="password" name="password" id="password" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" required type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password">
                             </div>
                             <div class="login_footer form-group">
                                 <div class="chek-form">
                                     <div class="custome-checkbox">
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox2" value="">
-                                        <label class="form-check-label" for="exampleCheckbox2"><span>I agree to terms &amp; Policy.</span></label>
+                                        <input class="form-check-input" type="checkbox" name="agree" id="exampleCheckbox2" value="1">
+                                        <label class="form-check-label" for="exampleCheckbox2"><span>I agree to terms & Policy.</span></label>
                                     </div>
                                 </div>
                             </div>
@@ -524,6 +512,28 @@
     </div>
 </div>
 <!-- END LOGIN SECTION -->
+
+<script>
+function validateForm() {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirm_password").value;
+    var checkbox = document.getElementById("exampleCheckbox2").checked;
+    var errorMessage = document.getElementById("error-message");
+
+    if (password !== confirmPassword) {
+        errorMessage.textContent = "Passwords do not match!";
+        errorMessage.style.display = "block";
+        return false; // Prevent form submission
+    } else if (!checkbox) {
+        errorMessage.textContent = "You must agree to the terms & policy!";
+        errorMessage.style.display = "block";
+        return false; // Prevent form submission
+    } else {
+        errorMessage.style.display = "none";
+        return true; // Allow form submission
+    }
+}
+</script>
 
 <!-- START SECTION SUBSCRIBE NEWSLETTER -->
 <!-- <div class="section bg_default small_pt small_pb">

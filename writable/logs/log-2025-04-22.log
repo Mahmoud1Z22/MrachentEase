@@ -1,0 +1,335 @@
+CRITICAL - 2025-04-22 12:57:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "product_detail.php"
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('product_detail.php')
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('product_detail', [], true)
+ 3 APPPATH\Controllers\ProductDetails.php(70): view('product_detail', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->product_details('2')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 12:58:14 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "product_detail.php"
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('product_detail.php')
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('product_detail', [], true)
+ 3 APPPATH\Controllers\ProductDetails.php(70): view('product_detail', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->product_details('2')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 12:58:15 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "product_detail.php"
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('product_detail.php')
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('product_detail', [], true)
+ 3 APPPATH\Controllers\ProductDetails.php(70): view('product_detail', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->product_details('2')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 12:59:40 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "product_detail.php"
+[Method: GET, Route: product_details/2]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('product_detail.php')
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('product_detail', [], true)
+ 3 APPPATH\Controllers\ProductDetails.php(70): view('product_detail', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductDetails->product_details('2')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductDetails))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 17:02:25 --> Error: Class "App\Models\Cart_model" not found
+[Method: GET, Route: cart]
+in APPPATH\Controllers\Cart.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 17:28:59 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: cart]
+in APPPATH\Views\cart.php on line 107.
+ 1 APPPATH\Views\cart.php(107): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php', 107)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('cart', [], true)
+ 5 APPPATH\Controllers\Cart.php(78): view('cart', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 17:37:26 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: cart]
+in APPPATH\Views\cart.php on line 107.
+ 1 APPPATH\Views\cart.php(107): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php', 107)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('cart', [], true)
+ 5 APPPATH\Controllers\Cart.php(83): view('cart', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 17:46:08 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: cart]
+in APPPATH\Views\cart.php on line 107.
+ 1 APPPATH\Views\cart.php(107): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php', 107)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('cart', [], true)
+ 5 APPPATH\Controllers\Cart.php(83): view('cart', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 17:47:19 --> ErrorException: Undefined array key "image"
+[Method: GET, Route: cart]
+in APPPATH\Views\cart.php on line 93.
+ 1 APPPATH\Views\cart.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php', 93)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('cart', [], true)
+ 5 APPPATH\Controllers\Cart.php(83): view('cart', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 17:47:20 --> ErrorException: Undefined array key "image"
+[Method: GET, Route: cart]
+in APPPATH\Views\cart.php on line 93.
+ 1 APPPATH\Views\cart.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php', 93)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('cart', [], true)
+ 5 APPPATH\Controllers\Cart.php(83): view('cart', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 17:47:54 --> ErrorException: Undefined variable $cart_items
+[Method: GET, Route: cart]
+in APPPATH\Controllers\Cart.php on line 44.
+ 1 APPPATH\Controllers\Cart.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cart_items', 'C:\\wamp64\\www\\MrachentEase\\app\\Controllers\\Cart.php', 44)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 17:56:46 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\Cart_model". This is a method of the Query Builder Class.
+[Method: GET, Route: cart]
+in SYSTEMPATH\Model.php on line 948.
+ 1 SYSTEMPATH\Model.php(948): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\Cart_model', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Controllers\Cart.php(43): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 17:59:59 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\Cart_model". This is a method of the Query Builder Class.
+[Method: GET, Route: cart]
+in SYSTEMPATH\Model.php on line 948.
+ 1 SYSTEMPATH\Model.php(948): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\Cart_model', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Controllers\Cart.php(43): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 18:03:41 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\Cart_model". This is a method of the Query Builder Class.
+[Method: GET, Route: cart]
+in SYSTEMPATH\Model.php on line 948.
+ 1 SYSTEMPATH\Model.php(948): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\Cart_model', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Controllers\Cart.php(43): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 18:06:29 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\Cart_model". This is a method of the Query Builder Class.
+[Method: GET, Route: cart]
+in SYSTEMPATH\Model.php on line 948.
+ 1 SYSTEMPATH\Model.php(948): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\Cart_model', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Controllers\Cart.php(43): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 18:06:30 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\Cart_model". This is a method of the Query Builder Class.
+[Method: GET, Route: cart]
+in SYSTEMPATH\Model.php on line 948.
+ 1 SYSTEMPATH\Model.php(948): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\Cart_model', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Controllers\Cart.php(43): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 18:06:30 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\Cart_model". This is a method of the Query Builder Class.
+[Method: GET, Route: cart]
+in SYSTEMPATH\Model.php on line 948.
+ 1 SYSTEMPATH\Model.php(948): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\Cart_model', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Controllers\Cart.php(43): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 18:07:12 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\Cart_model". This is a method of the Query Builder Class.
+[Method: GET, Route: cart]
+in SYSTEMPATH\Model.php on line 948.
+ 1 SYSTEMPATH\Model.php(948): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\Cart_model', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Controllers\Cart.php(43): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 18:07:13 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\Cart_model". This is a method of the Query Builder Class.
+[Method: GET, Route: cart]
+in SYSTEMPATH\Model.php on line 948.
+ 1 SYSTEMPATH\Model.php(948): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\Cart_model', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Controllers\Cart.php(43): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 18:07:13 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\Cart_model". This is a method of the Query Builder Class.
+[Method: GET, Route: cart]
+in SYSTEMPATH\Model.php on line 948.
+ 1 SYSTEMPATH\Model.php(948): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\Cart_model', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Controllers\Cart.php(43): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 18:07:13 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\Cart_model". This is a method of the Query Builder Class.
+[Method: GET, Route: cart]
+in SYSTEMPATH\Model.php on line 948.
+ 1 SYSTEMPATH\Model.php(948): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\Cart_model', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Controllers\Cart.php(43): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 18:07:13 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\Cart_model". This is a method of the Query Builder Class.
+[Method: GET, Route: cart]
+in SYSTEMPATH\Model.php on line 948.
+ 1 SYSTEMPATH\Model.php(948): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\Cart_model', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Controllers\Cart.php(43): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 18:07:14 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\Cart_model". This is a method of the Query Builder Class.
+[Method: GET, Route: cart]
+in SYSTEMPATH\Model.php on line 948.
+ 1 SYSTEMPATH\Model.php(948): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\Cart_model', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Controllers\Cart.php(43): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 18:08:45 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\Cart_model". This is a method of the Query Builder Class.
+[Method: GET, Route: cart]
+in SYSTEMPATH\Model.php on line 948.
+ 1 SYSTEMPATH\Model.php(948): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\Cart_model', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Controllers\Cart.php(43): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 18:12:33 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: cart]
+in APPPATH\Views\cart.php on line 107.
+ 1 APPPATH\Views\cart.php(107): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php', 107)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('cart', [], true)
+ 5 APPPATH\Controllers\Cart.php(87): view('cart', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 18:12:34 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: cart]
+in APPPATH\Views\cart.php on line 107.
+ 1 APPPATH\Views\cart.php(107): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php', 107)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('cart', [], true)
+ 5 APPPATH\Controllers\Cart.php(87): view('cart', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-22 18:13:01 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: cart]
+in APPPATH\Views\cart.php on line 107.
+ 1 APPPATH\Views\cart.php(107): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php', 107)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\cart.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('cart', [], true)
+ 5 APPPATH\Controllers\Cart.php(87): view('cart', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cart->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

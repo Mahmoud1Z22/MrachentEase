@@ -56,49 +56,6 @@
 </div>
 <!-- END LOADER -->
 
-<!-- Home Popup Section -->
-<div class="modal fade subscribe_popup" id="onload-popup" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><i class="ion-ios-close-empty"></i></span>
-                </button>
-                <div class="row no-gutters">
-                    <div class="col-sm-5">
-                    	<div class="background_bg h-100" data-img-src="assets/images/popup_img.jpg"></div>
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="popup_content">
-                            <div class="popup-text">
-                                <div class="heading_s4">
-                                    <h4>Subscribe and Get 25% Discount!</h4>
-                                </div>
-                                <p>Subscribe to the newsletter to receive updates about new products.</p>
-                            </div>
-                            <form method="post">
-                            	<div class="form-group">
-                                	<input name="email" required type="email" class="form-control rounded-0" placeholder="Enter Your Email">
-                                </div>
-                                <div class="form-group">
-                                	<button class="btn btn-fill-line btn-block text-uppercase rounded-0" title="Subscribe" type="submit">Subscribe</button>
-                                </div>
-                            </form>
-                            <div class="chek-form">
-                                <div class="custome-checkbox">
-                                    <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox3" value="">
-                                    <label class="form-check-label" for="exampleCheckbox3"><span>Don't show this popup again!</span></label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    	</div>
-    </div>
-</div>
-<!-- End Screen Load Popup Section --> 
-
 <!-- START HEADER -->
 <header class="header_wrap fixed-top header_with_topbar">
 	<div class="top-header">
@@ -106,7 +63,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                 	<div class="d-flex align-items-center justify-content-center justify-content-md-start">
-                        <div class="lng_dropdown mr-2">
+                        <!-- <div class="lng_dropdown mr-2">
                             <select name="countries" class="custome_select">
                                 <option value='en' data-image="assets/images/eng.png" data-title="English">English</option>
                                 <option value='fn' data-image="assets/images/fn.png" data-title="France">France</option>
@@ -119,7 +76,7 @@
                                 <option value='EUR' data-title="EUR">EUR</option>
                                 <option value='GBR' data-title="GBR">GBR</option>
                             </select>
-                        </div>
+                        </div> -->
                         <ul class="contact_detail text-center text-lg-left">
                             <li><i class="ti-mobile"></i><span>123-456-7890</span></li>
                         </ul>
@@ -129,8 +86,8 @@
                 	<div class="text-center text-md-right">
                        	<ul class="header_list">
                         	<li><a href="compare.html"><i class="ti-control-shuffle"></i><span>Compare</span></a></li>
-                            <li><a href="wishlist.html"><i class="ti-heart"></i><span>Wishlist</span></a></li>
-                            <li><a href="login.html"><i class="ti-user"></i><span>Login</span></a></li>
+                            <li><a href="<?php echo site_url('wishlist'); ?>"><i class="ti-heart"></i><span>Wishlist</span></a></li>
+                            <li><a href="<?php echo site_url('login'); ?>"><i class="ti-user"></i><span>Login</span></a></li>
 						</ul>
                     </div>
                 </div>
@@ -140,43 +97,20 @@
     <div class="bottom_header dark_skin main_menu_uppercase">
     	<div class="container">
             <nav class="navbar navbar-expand-lg"> 
-                <a class="navbar-brand" href="index.html">
-                    <h1>
+                
+                <a class="navbar-brand" href="<?php echo site_url(''); ?>">
+                    <h2>
                         <img src="assets/images/favicon.png" alt="">
                         <b>MarchentEase</b>
-                    </h1>
+                    </h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"> 
                     <span class="ion-android-menu"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="dropdown">
-                            <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Home</a>
-                            <div class="dropdown-menu">
-                                <ul> 
-                                    <li><a class="dropdown-item nav-link nav_item" href="index.html">Fashion 1</a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="index-2.html">Fashion 2</a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="index-3.html">Furniture 1</a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="index-4.html">Furniture 2</a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="index-5.html">Electronics 1</a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="index-6.html">Electronics 2</a></li>
-                                </ul>
-                            </div>   
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu">
-                                <ul> 
-                                    <li><a class="dropdown-item nav-link nav_item" href="about.html">About Us</a></li> 
-                                    <li><a class="dropdown-item nav-link nav_item" href="contact.html">Contact Us</a></li> 
-                                    <li><a class="dropdown-item nav-link nav_item" href="faq.html">Faq</a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="404.html">404 Error Page</a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="login.html">Login</a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="signup.html">Register</a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="term-condition.html">Terms and Conditions</a></li>
-                                </ul>
-                            </div>
+                        <li >
+                            <a class="nav-link active" href="#">Home</a>
                         </li>
                         <li class="dropdown dropdown-mega-menu">
                             <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Products</a>
@@ -257,7 +191,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="dropdown">
+                        <!-- <li class="dropdown">
                             <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Blog</a>
                             <div class="dropdown-menu dropdown-reverse">
                                 <ul>
@@ -308,9 +242,9 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
+                        </li> -->
                         <li class="dropdown dropdown-mega-menu">
-                            <a class="dropdown-toggle nav-link active" href="#" data-toggle="dropdown">Shop</a>
+                            <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Brands</a>
                             <div class="dropdown-menu">
                                 <ul class="mega-menu d-lg-flex">
                                     <li class="mega-menu-col col-lg-9">
@@ -318,7 +252,7 @@
                                             <li class="mega-menu-col col-lg-4">
                                                 <ul> 
                                                     <li class="dropdown-header">Shop Page Layout</li>
-                                                    <li><a class="dropdown-item nav-link nav_item active" href="shop-list.html">shop List view</a></li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-list.html">shop List view</a></li>
                                                     <li><a class="dropdown-item nav-link nav_item" href="shop-list-left-sidebar.html">shop List Left Sidebar</a></li>
                                                     <li><a class="dropdown-item nav-link nav_item" href="shop-list-right-sidebar.html">shop List Right Sidebar</a></li>
                                                     <li><a class="dropdown-item nav-link nav_item" href="shop-left-sidebar.html">Left Sidebar</a></li>
@@ -367,7 +301,70 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a class="nav-link nav_item" href="contact.html">Contact Us</a></li> 
+                        <li class="dropdown dropdown-mega-menu">
+                            <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Shops</a>
+                            <div class="dropdown-menu">
+                                <ul class="mega-menu d-lg-flex">
+                                    <li class="mega-menu-col col-lg-9">
+                                        <ul class="d-lg-flex">
+                                            <li class="mega-menu-col col-lg-4">
+                                                <ul> 
+                                                    <li class="dropdown-header">Shop Page Layout</li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-list.html">shop List view</a></li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-list-left-sidebar.html">shop List Left Sidebar</a></li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-list-right-sidebar.html">shop List Right Sidebar</a></li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-left-sidebar.html">Left Sidebar</a></li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-right-sidebar.html">Right Sidebar</a></li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-load-more.html">Shop Load More</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="mega-menu-col col-lg-4">
+                                                <ul>
+                                                    <li class="dropdown-header">Other Pages</li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-cart.html">Cart</a></li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="checkout.html">Checkout</a></li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="my-account.html">My Account</a></li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="wishlist.html">Wishlist</a></li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="compare.html">compare</a></li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="order-completed.html">Order Completed</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="mega-menu-col col-lg-4">
+                                                <ul>
+                                                    <li class="dropdown-header">Product Pages</li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail.html">Default</a></li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-left-sidebar.html">Left Sidebar</a></li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-right-sidebar.html">Right Sidebar</a></li>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Thumbnails Left</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="mega-menu-col col-lg-3">
+                                        <div class="header_banner">
+                                            <div class="header_banner_content">
+                                                <div class="shop_banner">
+                                                    <div class="banner_img overlay_bg_40">
+                                                        <img src="assets/images/shop_banner.jpg" alt="shop_banner"/>
+                                                    </div> 
+                                                    <div class="shop_bn_content">
+                                                        <h5 class="text-uppercase shop_subtitle">New Collection</h5>
+                                                        <h3 class="text-uppercase shop_title">Sale 30% Off</h3>
+                                                        <a href="#" class="btn btn-white rounded-0 btn-sm text-uppercase">Shop Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-link nav_item" href="contact.html">Contact Us</a>
+                        </li> 
+                        <li>
+                            <a class="nav-link" href="#">About us</a>
+                        </li>
                     </ul>
                 </div>
                 <ul class="navbar-nav attr-nav align-items-center">
@@ -396,7 +393,7 @@
                             </ul>
                             <div class="cart_footer">
                                 <p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">$</span></span>159.00</p>
-                                <p class="cart_buttons"><a href="#" class="btn btn-fill-line view-cart">View Cart</a><a href="#" class="btn btn-fill-out checkout">Checkout</a></p>
+                                <p class="cart_buttons"><a href="#" class="btn btn-fill-line rounded-0 view-cart">View Cart</a><a href="#" class="btn btn-fill-out rounded-0 checkout">Checkout</a></p>
                             </div>
                         </div>
                     </li>
@@ -404,29 +401,19 @@
             </nav>
         </div>
     </div>
+    <br>
 </header>
 <!-- END HEADER -->
 
-<!-- START SECTION BREADCRUMB -->
-<div class="breadcrumb_section bg_gray page-title-mini">
-    <div class="container"><!-- STRART CONTAINER -->
-        <div class="row align-items-center">
-        	<div class="col-md-6">
-                <div class="page-title">
-            		<h1>Shop List</h1>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <ol class="breadcrumb justify-content-md-end">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active">Shop List</li>
-                </ol>
-            </div>
-        </div>
-    </div><!-- END CONTAINER-->
+<!-- start shop name -->
+<div class="text-center my-4">
+    <img src="assets/images/manB.jpg" alt="Shop Photo" class="img-fluid rounded" style="max-width: 200px; height: auto;">
+    <h3 class="mt-3">Shop Name</h3>
 </div>
-<!-- END SECTION BREADCRUMB -->
+<!-- end shop name -->
+ <br>
+
+
 
 <!-- START MAIN CONTENT -->
 <div class="main_content">
@@ -1099,27 +1086,7 @@
 </div>
 <!-- END SECTION SHOP -->
 
-<!-- START SECTION SUBSCRIBE NEWSLETTER -->
-<div class="section bg_default small_pt small_pb">
-	<div class="container">	
-    	<div class="row align-items-center">	
-            <div class="col-md-6">
-                <div class="heading_s1 mb-md-0 heading_light">
-                    <h3>Subscribe Our Newsletter</h3>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="newsletter_form">
-                    <form>
-                        <input type="text" required="" class="form-control rounded-0" placeholder="Enter Email Address">
-                        <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- START SECTION SUBSCRIBE NEWSLETTER -->
+
 
 </div>
 <!-- END MAIN CONTENT -->
@@ -1131,10 +1098,12 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12">
                 	<div class="widget">
+                        <div class="footer_logo">
                             <h3>
                                 <img src="assets/images/favicon.png" alt="">
                                 <b style="color: white;">MarchentEase</b>
                             </h3>
+                        </div>
                         <p>If you are going to use of Lorem Ipsum need to be sure there isn't hidden of text</p>
                     </div>
                     <div class="widget">
@@ -1209,7 +1178,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="mb-md-0 text-center text-md-left">© 2020 All Rights Reserved by Bestwebcreator</p>
+                    <p class="mb-md-0 text-center text-md-left">© 2025 All Rights Reserved </p>
                 </div>
                 <div class="col-md-6">
                     <ul class="footer_payment text-center text-lg-right">
