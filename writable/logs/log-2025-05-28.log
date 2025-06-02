@@ -1,0 +1,506 @@
+CRITICAL - 2025-05-28 17:10:50 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "computers,-tablets-&-network-hardware"
+[Method: GET, Route: shop/category/1/computers,-tablets-&-network-hardware]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('shop/category/1/computers,-tablets-&-network-hardware')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('shop/category/1/computers,-tablets-&-network-hardware')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-28 17:11:35 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "home-&-garden"
+[Method: GET, Route: shop/category/3/home-&-garden]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('shop/category/3/home-&-garden')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('shop/category/3/home-&-garden')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-28 17:37:10 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "computers,-tablets-&-network-hardware"
+[Method: GET, Route: shop/category/1/computers,-tablets-&-network-hardware]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('shop/category/1/computers,-tablets-&-network-hardware')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('shop/category/1/computers,-tablets-&-network-hardware')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-28 17:37:32 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "video-games-&-consoles"
+[Method: GET, Route: shop/category/1/video-games-&-consoles]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('shop/category/1/video-games-&-consoles')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('shop/category/1/video-games-&-consoles')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-28 18:01:59 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "computers,-tablets-&-network-hardware"
+[Method: GET, Route: shop/category/1/computers,-tablets-&-network-hardware]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('shop/category/1/computers,-tablets-&-network-hardware')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('shop/category/1/computers,-tablets-&-network-hardware')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-28 18:52:37 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:52:37 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:52:37 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:52:37 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:52:37 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:52:37 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:52:38 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:52:47 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:52:48 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:52:48 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:52:48 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:52:48 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:52:48 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:52:48 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:53:00 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:53:00 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:53:00 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:53:00 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:53:00 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:53:00 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:53:00 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:54:50 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:54:50 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:54:50 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:54:50 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:54:50 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:54:50 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:54:50 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:58:45 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:58:45 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:58:45 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:58:45 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:58:45 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:58:45 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:58:45 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:58:57 --> Subcategory not found for category_id: 1, sanitized subcategory_name: Computers-ablets-etwork-ardware
+ERROR - 2025-05-28 18:59:10 --> Subcategory not found for category_id: 1, sanitized subcategory_name: Computers-ablets-etwork-ardware
+ERROR - 2025-05-28 18:59:11 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:11 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:11 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:11 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:11 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:11 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:11 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:15 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:15 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:15 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:15 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:15 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:15 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:15 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:24 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:24 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:24 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:24 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:24 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:24 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:24 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:32 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:32 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:32 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:32 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:32 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:32 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:32 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:40 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:40 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:40 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:40 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:40 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:41 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 18:59:41 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:08:43 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:08:43 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:08:43 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:08:43 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:08:43 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:08:43 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:08:43 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:02 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:02 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:02 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:02 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:02 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:02 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:02 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:15 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:15 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:15 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:15 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:15 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:15 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:15 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:42 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:42 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:42 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:42 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:42 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:42 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:09:42 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:10:05 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:10:05 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:10:05 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:10:05 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:10:05 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:10:05 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:10:05 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:10:17 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:10:17 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:10:17 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:10:17 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:10:17 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:10:17 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 19:10:17 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+CRITICAL - 2025-05-28 19:21:01 --> ErrorException: Undefined variable $selected_subcategory
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 231.
+ 1 APPPATH\Views\home.php(231): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $selected_subcategory', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 231)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(131): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-28 19:21:39 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "computers,-tablets-&-network-hardware"
+[Method: GET, Route: shop/category/1/computers,-tablets-&-network-hardware]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('shop/category/1/computers,-tablets-&-network-hardware')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('shop/category/1/computers,-tablets-&-network-hardware')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-28 19:25:11 --> ErrorException: Undefined variable $selected_subcategory
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 232.
+ 1 APPPATH\Views\home.php(232): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $selected_subcategory', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 232)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(131): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-28 19:45:48 --> ErrorException: Undefined array key "product_count"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 234.
+ 1 APPPATH\Views\home.php(234): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_count"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 234)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(148): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-28 19:51:27 --> ErrorException: Undefined array key "product_count"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 238.
+ 1 APPPATH\Views\home.php(238): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_count"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 238)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(148): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-28 19:59:15 --> ErrorException: Undefined array key "product_count"
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 238.
+ 1 APPPATH\Views\home.php(238): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_count"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 238)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(148): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-28 20:08:01 --> Subcategory not found for category_id: 1, sanitized subcategory_name: Computers-ablets-etwork-ardware
+CRITICAL - 2025-05-28 20:08:31 --> ErrorException: Undefined array key "product_count"
+[Method: GET, Route: products-list/subcategory-products/1/omputers-ablets-etwork-ardware]
+in APPPATH\Views\products_list_sub.php on line 509.
+ 1 APPPATH\Views\products_list_sub.php(509): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_count"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\products_list_sub.php', 509)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\products_list_sub.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('products_list_sub', [], true)
+ 5 APPPATH\Controllers\ProductsList.php(310): view('products_list_sub', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductsList->subcategoryProducts('1', 'omputers-ablets-etwork-ardware')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsList))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-28 20:09:10 --> ErrorException: Undefined array key "product_count"
+[Method: GET, Route: products-list/subcategory-products/1/omputers-ablets-etwork-ardware]
+in APPPATH\Views\products_list_sub.php on line 509.
+ 1 APPPATH\Views\products_list_sub.php(509): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_count"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\products_list_sub.php', 509)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\products_list_sub.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('products_list_sub', [], true)
+ 5 APPPATH\Controllers\ProductsList.php(310): view('products_list_sub', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductsList->subcategoryProducts('1', 'omputers-ablets-etwork-ardware')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsList))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-28 20:09:55 --> ErrorException: Undefined array key "product_count"
+[Method: GET, Route: products-list/subcategory-products/1/omputers-ablets-etwork-ardware]
+in APPPATH\Views\products_list_sub.php on line 509.
+ 1 APPPATH\Views\products_list_sub.php(509): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_count"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\products_list_sub.php', 509)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\products_list_sub.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('products_list_sub', [], true)
+ 5 APPPATH\Controllers\ProductsList.php(310): view('products_list_sub', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductsList->subcategoryProducts('1', 'omputers-ablets-etwork-ardware')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsList))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-28 20:11:04 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:11:04 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:11:05 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:11:05 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:11:05 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:11:05 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:11:05 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:12:04 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:12:04 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:12:04 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:12:04 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:12:04 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:12:04 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:12:04 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:12:08 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:12:08 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:12:08 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:12:08 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:12:08 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:12:08 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:12:08 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+CRITICAL - 2025-05-28 20:12:44 --> ErrorException: Undefined variable $sanitizedSubcategoryName
+[Method: GET, Route: /]
+in APPPATH\Controllers\Home.php on line 133.
+ 1 APPPATH\Controllers\Home.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sanitizedSubcategoryName', 'C:\\wamp64\\www\\MrachentEase\\app\\Controllers\\Home.php', 133)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-28 20:15:17 --> Subcategory not found for category_id: 1, sanitized subcategory_name: Computers-ablets-etwork-ardware
+ERROR - 2025-05-28 20:15:36 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:15:36 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:15:36 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:15:36 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:15:36 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:15:36 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:15:36 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:10 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:10 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:10 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:10 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:10 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:10 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:10 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:23 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:23 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:23 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:23 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:23 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:23 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:23 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:28 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:28 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:28 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:28 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:28 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:28 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:28 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:43 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:43 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:43 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:43 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:43 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:43 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:43 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:53 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:53 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:53 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:53 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:53 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:53 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:16:53 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:18:24 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:18:24 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:18:24 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:18:24 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:18:24 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:18:24 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:18:24 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:20:14 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:20:14 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:20:14 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:20:14 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:20:14 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:20:14 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 20:20:14 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:34:39 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:34:39 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:34:39 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:34:39 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:34:39 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:34:39 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:34:39 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:34:55 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:34:55 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:34:55 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:34:55 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:34:55 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:34:55 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:34:55 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:08 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:08 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:08 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:08 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:08 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:08 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:08 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:29 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:29 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:29 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:29 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:29 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:29 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:29 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:40 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:40 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:40 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:40 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:40 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:40 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:35:40 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:01 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:01 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:01 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:01 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:01 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:01 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:01 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:42 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:42 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:42 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:42 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:42 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:42 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:42 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:48 --> Error adding/updating cart item for product_id: 32 - Undefined array key "id"
+ERROR - 2025-05-28 22:36:48 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:48 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:48 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:48 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:48 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:48 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:36:48 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:37:19 --> User ID: 8 | Role: customer | Logged in: Yes
+ERROR - 2025-05-28 22:37:19 --> Quantities from form: Array
+(
+    [38] => 1
+    [39] => 2
+)
+
+ERROR - 2025-05-28 22:37:19 --> Processing cart ID: 38 with quantity: 1
+ERROR - 2025-05-28 22:37:19 --> Updated cart item with cart_id: 38 to quantity: 1
+ERROR - 2025-05-28 22:37:19 --> Processing cart ID: 39 with quantity: 2
+ERROR - 2025-05-28 22:37:19 --> Updated cart item with cart_id: 39 to quantity: 2
+ERROR - 2025-05-28 22:38:00 --> Subcategory not found for category_id: 3, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:38:00 --> Subcategory not found for category_id: 3, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:38:00 --> Subcategory not found for category_id: 3, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:38:00 --> Subcategory not found for category_id: 3, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:38:00 --> Subcategory not found for category_id: 3, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:38:00 --> Subcategory not found for category_id: 3, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:38:01 --> Subcategory not found for category_id: 3, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:38:06 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:38:06 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:38:06 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:38:06 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:38:06 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:38:06 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 22:38:06 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-28 23:06:04 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 23:06:05 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 23:06:05 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 23:06:05 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 23:06:05 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 23:06:05 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-28 23:06:05 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+CRITICAL - 2025-05-28 23:32:54 --> ErrorException: Undefined variable $productCount
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 363.
+ 1 APPPATH\Views\home.php(363): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productCount', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 363)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(141): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-28 23:32:56 --> ErrorException: Undefined variable $productCount
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 363.
+ 1 APPPATH\Views\home.php(363): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productCount', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 363)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(141): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-28 23:34:31 --> ErrorException: Undefined array key "discount_price"
+[Method: GET, Route: shop-list/9]
+in APPPATH\Views\shop_list.php on line 488.
+ 1 APPPATH\Views\shop_list.php(488): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "discount_price"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\shop_list.php', 488)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\shop_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('shop_list', [], true)
+ 5 APPPATH\Controllers\ShopList.php(75): view('shop_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopList->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopList))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

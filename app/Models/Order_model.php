@@ -39,6 +39,22 @@ class Order_model extends Model
         ]
     ];
 
+    // Callback to set order_date to current date if not provided
+    protected $beforeInsert = ['setOrderDate'];
+
+   protected function setOrderDate(array $data)
+    {
+        log_message('debug', 'Entering setOrderDate callback. App timezone: ' . date_default_timezone_get() . ', Raw now: ' . date('Y-m-d H:i:s') . ', Intended time: ' . (new \DateTime('now'))->format('Y-m-d H:i:s'));
+        if (empty($data['data']['order_date'])) {
+            $dateTime = new \DateTime('now');
+            $data['data']['order_date'] = $dateTime->format('Y-m-d H:i:s');
+            log_message('debug', 'Order date set to: ' . $data['data']['order_date'] . ', DateTime object: ' . json_encode($dateTime));
+        } else {
+            log_message('debug', 'Order date already provided (overriding): ' . $data['data']['order_date']);
+        }
+        return $data;
+    }
+
     // Method to get an order with its suborders
     public function getOrderWithSuborders($order_id)
     {

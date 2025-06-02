@@ -84,9 +84,9 @@ class Checkout extends BaseController
         return View('checkout', $data);
     }
 
-    public function placeOrder()
+   public function placeOrder()
 {
-    log_message('debug', 'placeOrder method called');
+    log_message('debug', 'placeOrder method called. App timezone: ' . date_default_timezone_get() . ', Current time: ' . (new \DateTime('now'))->format('Y-m-d H:i:s'));
 
     $cartModel = new \App\Models\Cart_model();
     $productModel = new \App\Models\Products_model();
@@ -106,7 +106,6 @@ class Checkout extends BaseController
         return redirect()->to('login')->with('error', 'Please log in to place an order.');
     }
 
-    // Fix: Compare the request method in a case-insensitive manner
     if (strtolower($this->request->getMethod()) !== 'post') {
         log_message('error', 'Invalid request method for placeOrder: ' . $this->request->getMethod());
         return redirect()->to('checkout')->with('error', 'Invalid request. Please use the checkout form.');
@@ -184,7 +183,7 @@ class Checkout extends BaseController
         return redirect()->to('cart')->with('error', 'No valid items in your cart to place an order.');
     }
 
-    // Start a database transaction to ensure data consistency
+    // Start a database transaction
     $db = \Config\Database::connect();
     $db->transStart();
 
@@ -192,13 +191,20 @@ class Checkout extends BaseController
         // Create the main order
         $order_data = [
             'customer_id' => $user_id,
-            'order_date' => date('Y-m-d H:i:s'),
             'total_amount' => $grand_total,
-            'status' => 'pending'
+            'status' => 'pending',
+            'condition' => 'unseen'
+            // order_date omitted to rely on beforeInsert callback
         ];
+        log_message('debug', 'Order data before insert: ' . json_encode($order_data));
         $orderModel->insert($order_data);
         $order_id = $orderModel->insertID();
-        log_message('debug', 'Main order created with order_id: ' . $order_id);
+        $inserted_order = $orderModel->find($order_id);
+        log_message('debug', 'Main order created with order_id: ' . $order_id . ', order_date: ' . ($inserted_order['order_date'] ?? 'Not set') . ', Raw DB value: ' . var_export($inserted_order, true));
+
+        if (!$order_id) {
+            throw new \Exception('Failed to create order');
+        }
 
         // Create suborders for each shop
         foreach ($grouped_cart_items as $shop_id => $shop_data) {
@@ -206,11 +212,16 @@ class Checkout extends BaseController
                 'order_id' => $order_id,
                 'shop_id' => $shop_id,
                 'subtotal' => $shop_data['subtotal'],
-                'status' => 'pending'
+                'status' => 'pending',
+                'condition' => 'unseen'
             ];
             $suborderModel->insert($suborder_data);
             $suborder_id = $suborderModel->insertID();
             log_message('debug', 'Suborder created with suborder_id: ' . $suborder_id . ' for shop_id: ' . $shop_id);
+
+            if (!$suborder_id) {
+                throw new \Exception('Failed to create suborder for shop_id: ' . $shop_id);
+            }
 
             // Add items to suborder_items
             foreach ($shop_data['items'] as $item) {
@@ -220,7 +231,11 @@ class Checkout extends BaseController
                     'quantity' => $item['quantity'],
                     'price' => $item['price']
                 ];
-                $suborderItemModel->insert($suborder_item_data);
+                $result = $suborderItemModel->insert($suborder_item_data);
+                if (!$result) {
+                    log_message('error', 'Failed to insert suborder item for suborder_id: ' . $suborder_id . ' and product_id: ' . $item['product_id']);
+                    throw new \Exception('Failed to add item to suborder');
+                }
                 log_message('debug', 'Suborder item added for product_id: ' . $item['product_id'] . ' under suborder_id: ' . $suborder_id);
             }
         }
@@ -239,7 +254,7 @@ class Checkout extends BaseController
     } catch (\Exception $e) {
         $db->transRollback();
         log_message('error', 'Error placing order: ' . $e->getMessage());
-        return redirect()->to('checkout')->with('error', 'Unable to place your order. Please try again later.');
+        return redirect()->to('checkout')->with('error', 'Unable to place your order. Please try again later. Error: ' . $e->getMessage());
     }
 
     // Redirect to order-completed page with the order_id

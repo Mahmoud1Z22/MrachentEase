@@ -517,13 +517,12 @@
                                                             $total = $user['user_type'] === 'customer' ? $order['total_amount'] : $order['subtotal'];
                                                             echo '$' . number_format($total, 2) . ' for ' . $order['item_count'] . ' item' . ($order['item_count'] != 1 ? 's' : '');
                                                             ?>
-                                                        </td>
-                                                        <td>
+                                                        </td>                                               <td>
                                                             <?php 
                                                             // Link to view order/suborder details
                                                             $viewUrl = $user['user_type'] === 'customer' 
-                                                                ? site_url('order/view/' . $order['order_id'])
-                                                                : site_url('suborder/view/' . $order['suborder_id']);
+                                                                ? site_url('order/details/' . $order['order_id'])
+                                                                : site_url('suborder/details/' . $order['suborder_id']);
                                                             ?>
                                                             <a href="<?php echo $viewUrl; ?>" class="btn btn-fill-out btn-sm">View</a>
                                                         </td>

@@ -12,35 +12,36 @@
 <!-- SITE TITLE -->
 <title>MarchentEase</title>
 <!-- Favicon Icon -->
-<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+<link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/images/favicon.png'); ?>">
 <!-- Animation CSS -->
-<link rel="stylesheet" href="assets/css/animate.css">	
+<link rel="stylesheet" href="<?= base_url('assets/css/animate.css'); ?>">	
 <!-- Latest Bootstrap min CSS -->
-<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"> 
 <!-- Icon Font CSS -->
-<link rel="stylesheet" href="assets/css/all.min.css">
-<link rel="stylesheet" href="assets/css/ionicons.min.css">
-<link rel="stylesheet" href="assets/css/themify-icons.css">
-<link rel="stylesheet" href="assets/css/linearicons.css">
-<link rel="stylesheet" href="assets/css/flaticon.css">
-<link rel="stylesheet" href="assets/css/simple-line-icons.css">
-<!--- owl carousel CSS-->
-<link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.min.css">
-<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">
-<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="<?= base_url('assets/css/all.min.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/ionicons.min.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/themify-icons.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/linearicons.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/flaticon.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/simple-line-icons.css'); ?>">
+<!-- Owl carousel CSS -->
+<link rel="stylesheet" href="<?= base_url('assets/owlcarousel/css/owl.carousel.min.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/owlcarousel/css/owl.theme.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/owlcarousel/css/owl.theme.default.min.css'); ?>">
 <!-- Magnific Popup CSS -->
-<link rel="stylesheet" href="assets/css/magnific-popup.css">
-<!-- jquery-ui CSS -->
-<link rel="stylesheet" href="assets/css/jquery-ui.css">
+<link rel="stylesheet" href="<?= base_url('assets/css/magnific-popup.css'); ?>">
+<!-- jQuery UI CSS -->
+<link rel="stylesheet" href="<?= base_url('assets/css/jquery-ui.css'); ?>">
 <!-- Slick CSS -->
-<link rel="stylesheet" href="assets/css/slick.css">
-<link rel="stylesheet" href="assets/css/slick-theme.css">
+<link rel="stylesheet" href="<?= base_url('assets/css/slick.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/slick-theme.css'); ?>">
 <!-- Style CSS -->
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="<?= base_url('assets/css/style.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/responsive.css'); ?>">
+
 
 </head>
 
@@ -55,6 +56,58 @@
     </div>
 </div>
 <!-- END LOADER -->
+ 
+
+<?php
+// Initialize cart data
+$cart_count = 0;
+$cart_items = [];
+
+// Check if the user is logged in to fetch their cart items
+$logged_in = session()->get('logged_in');
+$user_id = session()->get('user_id');
+
+if ($logged_in && $user_id) {
+    $cartModel = new \App\Models\Cart_model();
+    $productModel = new \App\Models\Products_model();
+    $imageModel = new \App\Models\Product_images_model();
+
+    try {
+        // Fetch cart items for the user
+        $cart_items = $cartModel->where('customer_id', $user_id)->findAll();
+        log_message('debug', 'Cart items for dropdown: ' . json_encode($cart_items));
+
+        // Clear cart duplicates by cart_id or product_id
+        $cart_items = array_unique($cart_items, SORT_REGULAR); // Ensures no duplicates in the cart
+
+        // Fetch product details and images for each cart item
+        foreach ($cart_items as &$item) {
+            $product = $productModel->find($item['product_id']);
+            if ($product) {
+                $item['product_name'] = $product['product_name'];
+                $item['price'] = $product['price'];
+            } else {
+                $item['product_name'] = 'Unknown Product';
+                $item['price'] = 0.00;
+                log_message('error', 'Product not found for product_id: ' . $item['product_id']);
+            }
+
+            $image = $imageModel->where('product_id', $item['product_id'])->first();
+            $item['image'] = $image && !empty($image['image']) ? $image['image'] : 'images/default_product.jpg';
+        }
+
+        // Calculate cart count
+        $cart_count = count($cart_items);
+        log_message('debug', 'Cart count for user_id ' . $user_id . ': ' . $cart_count);
+    } catch (\Exception $e) {
+        log_message('error', 'Error fetching cart items for dropdown: ' . $e->getMessage());
+        $cart_count = 0;
+        $cart_items = [];
+    }
+}
+?>
+
+
 
 
 
@@ -80,16 +133,40 @@
                             </select>
                         </div> -->
                         <ul class="contact_detail text-center text-lg-left">
-                            <li><i class="ti-mobile"></i><span>123-456-7890</span></li>
+                            <li>
+                                <i class="ti-mobile"></i>
+                                <span>123-456-7890</span>
+                                <i></i>
+                                <?php if (session()->get('logged_in')): ?>
+                                    <b>
+                                        Hi
+                                    </b>
+                                    <a href="<?php echo site_url('account_details'); ?>">
+                                        <b>
+                                            <?php echo session()->get('logged_in') ? esc(session()->get('userName')) : 'Guest'; ?>
+                                        </b>
+                                    </a>
+                                <?php endif; ?>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-6">
                 	<div class="text-center text-md-right">
                        	<ul class="header_list">
-                        	<li><a href="compare.html"><i class="ti-control-shuffle"></i><span>Compare</span></a></li>
-                            <li><a href="<?php echo site_url('wishlist'); ?>"><i class="ti-heart"></i><span>Wishlist</span></a></li>
-                            <li><a href="<?php echo site_url('login'); ?>"><i class="ti-user"></i><span>Login</span></a></li>
+                        	   <li>
+                                    <a href="contact.html">Contact Us</a>
+                                </li>  
+                                <li>
+                                    <a href="#">About us</a>
+                                </li> 
+                                <li><a href="<?php echo site_url('wishlist/view'); ?>"><i class="ti-heart"></i><span>Wishlist</span></a></li>                            <li>
+                                <?php if (session()->get('logged_in')): ?>
+                                    <a href="<?php echo site_url('logout'); ?>"><i class="ti-user"></i><span>Logout</span></a>
+                                <?php else: ?>
+                                    <a href="<?php echo site_url('login'); ?>"><i class="ti-user"></i><span>Login</span></a>
+                                <?php endif; ?>
+                            </li>
 						</ul>
                     </div>
                 </div>
@@ -102,13 +179,33 @@
                 
                 <a class="navbar-brand" href="<?php echo site_url(''); ?>">
                     <h2>
-                        <img src="assets/images/favicon.png" alt="">
+                        <img src=<?= base_url('assets/images/favicon.png'); ?> alt="">
                         <b>MarchentEase</b>
                     </h2>
                 </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"> 
                     <span class="ion-android-menu"></span>
                 </button>
+
+                <div class="product_search_form collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                        <form>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="custom_select">
+                                        <select class="first_null">
+                                            <option value="">All Category</option>
+                                            <?php foreach ($categories as $categoryId => $category): ?>
+                                                <option value="<?php echo esc($category['name']); ?>"><?php echo esc($category['name']); ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <input class="form-control" placeholder="Search Product..." required="" type="text">
+                                <button type="submit" class="search_btn"><i class="linearicons-magnifier"></i></button>
+                            </div>
+                        </form>
+                    </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li >
@@ -118,191 +215,86 @@
                             <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Products</a>
                             <div class="dropdown-menu">
                                 <ul class="mega-menu d-lg-flex">
-                                    <li class="mega-menu-col col-lg-3">
-                                        <ul> 
-                                            <li class="dropdown-header">Woman's</li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-list-left-sidebar.html">Vestibulum sed</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-left-sidebar.html">Donec porttitor</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-right-sidebar.html">Donec vitae facilisis</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-list.html">Curabitur tempus</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-load-more.html">Vivamus in tortor</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-menu-col col-lg-3">
-                                        <ul>
-                                            <li class="dropdown-header">Men's</li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-cart.html">Donec vitae ante ante</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="checkout.html">Etiam ac rutrum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="wishlist.html">Quisque condimentum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="compare.html">Curabitur laoreet</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="order-completed.html">Vivamus in tortor</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-menu-col col-lg-3">
-                                        <ul>
-                                            <li class="dropdown-header">Kid's</li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail.html">Donec vitae facilisis</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-left-sidebar.html">Quisque condimentum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-right-sidebar.html">Etiam ac rutrum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec vitae ante ante</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec porttitor</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-menu-col col-lg-3">
-                                        <ul>
-                                            <li class="dropdown-header">Accessories</li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail.html">Donec vitae facilisis</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-left-sidebar.html">Quisque condimentum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-right-sidebar.html">Etiam ac rutrum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec vitae ante ante</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec porttitor</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <div class="d-lg-flex menu_banners">
-                                    <div class="col-sm-4">
-                                        <div class="header-banner">
-                                            <img src="assets/images/menu_banner1.jpg" alt="menu_banner1">
-                                            <div class="banne_info">
-                                                <h6>10% Off</h6>
-                                                <h4>New Arrival</h4>
-                                                <a href="#">Shop now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="header-banner">
-                                            <img src="assets/images/menu_banner2.jpg" alt="menu_banner2">
-                                            <div class="banne_info">
-                                                <h6>15% Off</h6>
-                                                <h4>Men's Fashion</h4>
-                                                <a href="#">Shop now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="header-banner">
-                                            <img src="assets/images/menu_banner3.jpg" alt="menu_banner3">
-                                            <div class="banne_info">
-                                                <h6>23% Off</h6>
-                                                <h4>Kids Fashion</h4>
-                                                <a href="#">Shop now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- <li class="dropdown">
-                            <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Blog</a>
-                            <div class="dropdown-menu dropdown-reverse">
-                                <ul>
-                                    <li>
-                                        <a class="dropdown-item menu-link dropdown-toggler" href="#">Grids</a>
-                                        <div class="dropdown-menu">
-                                            <ul> 
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-three-columns.html">3 columns</a></li>
-                                            	<li><a class="dropdown-item nav-link nav_item" href="blog-four-columns.html">4 columns</a></li> 
-                                            	<li><a class="dropdown-item nav-link nav_item" href="blog-left-sidebar.html">Left Sidebar</a></li> 
-                                            	<li><a class="dropdown-item nav-link nav_item" href="blog-right-sidebar.html">right Sidebar</a></li>
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-standard-left-sidebar.html">Standard Left Sidebar</a></li> 
-                                            	<li><a class="dropdown-item nav-link nav_item" href="blog-standard-right-sidebar.html">Standard right Sidebar</a></li>
+                                    <?php foreach ($categories as $categoryId => $category): ?>
+                                        <li class="mega-menu-col col-lg-3">
+                                            <ul>
+                                                <li class="dropdown-header"><?php echo esc($category['name']); ?></li>
+                                                <?php if (empty($category['subcategories'])): ?>
+                                                    <li><a class="dropdown-item nav-link nav_item" href="<?php echo site_url('products-list/category/' . $categoryId); ?>">All <?php echo esc($category['name']); ?></a></li>
+                                                <?php else: ?>
+                                                    <?php foreach ($category['subcategories'] as $subcategory): ?>
+                                                        <?php
+                                                            $subcategoryName = $subcategory['name'];
+                                                            if (strlen($subcategoryName) > 25) {
+                                                                $subcategoryName = substr($subcategoryName, 0, 30) . '...';
+                                                            }
+                                                        ?>
+                                                        <li><a class="dropdown-item nav-link nav_item" href="<?php echo esc($subcategory['url']); ?>"><?php echo esc($subcategoryName); ?></a></li>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
                                             </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item menu-link dropdown-toggler" href="#">Masonry</a>
-                                        <div class="dropdown-menu">
-                                            <ul> 
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-masonry-three-columns.html">3 columns</a></li>
-                                           		<li><a class="dropdown-item nav-link nav_item" href="blog-masonry-four-columns.html">4 columns</a></li> 
-                                            	<li><a class="dropdown-item nav-link nav_item" href="blog-masonry-left-sidebar.html">Left Sidebar</a></li> 
-                                            	<li><a class="dropdown-item nav-link nav_item" href="blog-masonry-right-sidebar.html">right Sidebar</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item menu-link dropdown-toggler" href="#">Single Post</a>
-                                        <div class="dropdown-menu">
-                                            <ul> 
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-single.html">Default</a></li>
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-single-left-sidebar.html">left sidebar</a></li>
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-single-slider.html">slider post</a></li> 
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-single-video.html">video post</a></li> 
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-single-audio.html">audio post</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item menu-link dropdown-toggler" href="#">List</a>
-                                        <div class="dropdown-menu">
-                                            <ul> 
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-list-left-sidebar.html">left sidebar</a></li>
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-list-right-sidebar.html">right sidebar</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li> -->
-                        <li class="dropdown dropdown-mega-menu">
-                            <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Brands</a>
-                            <div class="dropdown-menu">
-                                <ul class="mega-menu d-lg-flex">
-                                    <li class="mega-menu-col col-lg-9">
-                                        <ul class="d-lg-flex">
-                                            <li class="mega-menu-col col-lg-4">
-                                                <ul> 
-                                                    <li class="dropdown-header">Shop Page Layout</li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-list.html">shop List view</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-list-left-sidebar.html">shop List Left Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-list-right-sidebar.html">shop List Right Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-load-more.html">Shop Load More</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-menu-col col-lg-4">
-                                                <ul>
-                                                    <li class="dropdown-header">Other Pages</li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-cart.html">Cart</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="checkout.html">Checkout</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="my-account.html">My Account</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="wishlist.html">Wishlist</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="compare.html">compare</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="order-completed.html">Order Completed</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-menu-col col-lg-4">
-                                                <ul>
-                                                    <li class="dropdown-header">Product Pages</li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail.html">Default</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Thumbnails Left</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-menu-col col-lg-3">
-                                        <div class="header_banner">
-                                            <div class="header_banner_content">
-                                                <div class="shop_banner">
-                                                    <div class="banner_img overlay_bg_40">
-                                                        <img src="assets/images/shop_banner.jpg" alt="shop_banner"/>
-                                                    </div> 
-                                                    <div class="shop_bn_content">
-                                                        <h5 class="text-uppercase shop_subtitle">New Collection</h5>
-                                                        <h3 class="text-uppercase shop_title">Sale 30% Off</h3>
-                                                        <a href="#" class="btn btn-white rounded-0 btn-sm text-uppercase">Shop Now</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    <?php endforeach; ?>
                                 </ul>
                             </div>
                         </li>
+
+                        <style>
+                        /* Reset default list and container styles */
+                        .dropdown-menu {
+                            padding: 0 !important;
+                            margin: 0 !important;
+                            width: 100%;
+                            max-width: 100vw;
+                            overflow-x: auto;
+                            box-sizing: border-box !important;
+                        }
+
+                        /* Ensure mega-menu uses full width and wraps if needed */
+                        .mega-menu.d-lg-flex {
+                            display: flex !important;
+                            flex-wrap: wrap;
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            list-style: none !important;
+                            width: 100%;
+                            gap: 0 !important;
+                        }
+
+                        /* Adjust column width and remove all gaps */
+                        .mega-menu-col {
+                            flex: 0 0 auto;
+                            min-width: 200px;
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            box-sizing: border-box;
+                        }
+
+                        /* Remove Bootstrap col-lg-3 padding */
+                        .mega-menu-col.col-lg-3 {
+                            padding-left: 0 !important;
+                            padding-right: 0 !important;
+                        }
+
+                        /* Reset nested ul styles */
+                        .mega-menu-col ul {
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            list-style: none !important;
+                        }
+
+                        /* Subcategory item styles with increased width */
+                        .nav_item {
+                            display: block;
+                            max-width: 200px; /* Increased from 150px to accommodate longer names */
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            padding: 5px !important;
+                        }
+                        </style>
+                        
+                        
                         <li class="dropdown dropdown-mega-menu">
                             <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Shops</a>
                             <div class="dropdown-menu">
@@ -361,72 +353,85 @@
                                 </ul>
                             </div>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a class="nav-link nav_item" href="contact.html">Contact Us</a>
-                        </li> 
-                        <li>
+                        </li>  -->
+                        <!-- <li>
                             <a class="nav-link" href="#">About us</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <ul class="navbar-nav attr-nav align-items-center">
-                    <li><a href="javascript:void(0);" class="nav-link search_trigger"><i class="linearicons-magnifier"></i></a>
-                        <div class="search_wrap">
-                            <span class="close-search"><i class="ion-ios-close-empty"></i></span>
-                            <form>
-                                <input type="text" placeholder="Search" class="form-control" id="search_input">
-                                <button type="submit" class="search_icon"><i class="ion-ios-search-strong"></i></button>
-                            </form>
-                        </div><div class="search_overlay"></div>
-                    </li>
-                    <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#" data-toggle="dropdown"><i class="linearicons-cart"></i><span class="cart_count">2</span></a>
-                        <div class="cart_box dropdown-menu dropdown-menu-right">
-                            <ul class="cart_list">
-                                <li>
-                                    <a href="#" class="item_remove"><i class="ion-close"></i></a>
-                                    <a href="#"><img src="assets/images/cart_thamb1.jpg" alt="cart_thumb1">Variable product 001</a>
-                                    <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>78.00</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="item_remove"><i class="ion-close"></i></a>
-                                    <a href="#"><img src="assets/images/cart_thamb2.jpg" alt="cart_thumb2">Ornare sed consequat</a>
-                                    <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>81.00</span>
-                                </li>
-                            </ul>
-                            <div class="cart_footer">
-                                <p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">$</span></span>159.00</p>
-                                <p class="cart_buttons"><a href="#" class="btn btn-fill-line rounded-0 view-cart">View Cart</a><a href="#" class="btn btn-fill-out rounded-0 checkout">Checkout</a></p>
+                    
+
+                    <?php if (session()->get('logged_in')): ?>
+                        <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#" data-toggle="dropdown"><i class="linearicons-cart"></i><span class="cart_count"><?php echo $cart_count; ?></span></a>
+                            <div class="cart_box dropdown-menu dropdown-menu-right">
+                                <ul class="cart_list">
+                                        <?php if (empty($cart_items)): ?>
+                                            <li>
+                                                <span class="cart_quantity">Your cart is empty.</span>
+                                            </li>
+                                        <?php else: ?>
+                                            <?php foreach ($cart_items as $item): ?>
+                                                <li>
+                                                    <a href="<?php echo site_url('cart/remove/' . $item['cart_id']); ?>" class="item_remove">
+                                                        <i class="ion-close"></i>
+                                                    </a>
+                                                    <a href="<?php echo site_url('product_details/' . $item['product_id']); ?>">
+                                                        <img src="<?php echo base_url('assets/' . esc($item['image'])); ?>" alt="<?php echo esc($item['product_name']); ?>">
+                                                        <?php echo esc($item['product_name']); ?>
+                                                    </a>
+                                                    <span class="cart_quantity">
+                                                        <?php echo $item['quantity']; ?> x
+                                                        <span class="cart_amount">
+                                                            <span class="price_symbole">$</span>
+                                                            <?php echo number_format($item['price'], 2); ?>
+                                                        </span>
+                                                    </span>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                    </ul>
+                                    <div class="cart_footer">
+                                        <p class="cart_total">
+                                            <strong>Subtotal:</strong>
+                                            <span class="cart_price">
+                                                <span class="price_symbole">$</span>
+                                                <?php
+                                                $subtotal = 0;
+                                                foreach ($cart_items as $item) {
+                                                    $subtotal += $item['price'] * $item['quantity'];
+                                                }
+                                                echo number_format($subtotal, 2);
+                                                ?>
+                                            </span>
+                                        </p>
+                                        <p class="cart_buttons">
+                                            <a href="<?php echo site_url('cart'); ?>" class="btn btn-fill-line rounded-0 view-cart">View Cart</a>
+                                            <a href="<?php echo site_url('checkout'); ?>" class="btn btn-fill-out rounded-0 checkout">Checkout</a>
+                                        </p>
+                                    </div>
                             </div>
                         </div>
                     </li>
+                    <?php else: ?>
+                        <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#" data-toggle="dropdown"><i class="linearicons-cart"></i></a>
+                            <div class="cart_box dropdown-menu dropdown-menu-centered">
+                                <div class="cart_footer">
+                                    <p class="cart_total"><strong>Please login to view your cart</strong></p>
+                                    <p class="cart_buttons"><a href="<?php echo site_url('login'); ?>" class="btn btn-fill-out rounded-0 checkout">Login</a></p>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endif; ?>
+                    
                 </ul>
             </nav>
         </div>
     </div>
-    <br>
 </header>
 <!-- END HEADER -->
-
-<!-- START SECTION BREADCRUMB -->
-<div class="breadcrumb_section bg_gray page-title-mini">
-    <div class="container"><!-- STRART CONTAINER -->
-        <div class="row align-items-center">
-        	<div class="col-md-6">
-                <div class="page-title">
-            		<h1>Products</h1>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <ol class="breadcrumb justify-content-md-end">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active">Shop List Left Sidebar</li>
-                </ol>
-            </div>
-        </div>
-    </div><!-- END CONTAINER-->
-</div>
-<!-- END SECTION BREADCRUMB -->
 
 <!-- START MAIN CONTENT -->
 <div class="main_content">
@@ -434,6 +439,12 @@
 <!-- START SECTION SHOP -->
 <div class="section">
 	<div class="container">
+        <!-- Search Results Header -->
+            <div class="row my-4">
+                <div class="col-12 text-center">
+                    <h3><?php echo $searchTerm ? 'Search Results for "' . esc($searchTerm) . '"' : 'All Products'; ?></h3>
+                </div>
+            </div>
     	<div class="row">
 			<div class="col-lg-9">
             	<div class="row align-items-center mb-4 pb-1">
@@ -468,465 +479,67 @@
                     </div>
                 </div> 
                 <div class="row shop_container list">
-                    <div class="col-md-4 col-6">
-                        <div class="product">
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img1.jpg" alt="product_img1">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
+                    <?php if (!empty($products)): ?>
+                        <?php foreach ($products as $product): ?>
+                            <div class="col-md-4 col-6">
+                                <div class="product">
+                                    <div class="product_img">
+                                        <a href="shop-product-detail.html">
+                                            <img src="<?php echo base_url(esc($product['image'])); ?>" alt="<?php echo esc($product['product_name']); ?>">        
+                                        </a>
+                                        <div class="product_action_box">
+                                            <ul class="list_none pr_action_btn">
+                                                <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
+                                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
+                                                <li><a href="#"><i class="icon-heart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product_info">
+                                        <h6 class="product_title"><a href="shop-product-detail.html"><?php echo esc($product['product_name']); ?></a></h6>
+                                        <div class="product_price">
+                                            <span class="price">$<?php echo number_format($product['price'], 2); ?></span>
+                                            <?php if ($product['price'] < 100): ?>
+                                                <del>$<?php echo number_format($product['price'] + 10, 2); ?></del>
+                                                <div class="on_sale">
+                                                    <span>10% Off</span>
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="rating_wrap">
+                                            <div class="rating">
+                                                <div class="product_rate" style="width:<?php echo ($product['rating'] ?? 4) * 20; ?>%"></div>
+                                            </div>
+                                            <span class="rating_num">(<?php echo rand(10, 50); ?>)</span>
+                                        </div>
+                                        <div class="pr_desc">
+                                            <p><?php echo esc($product['product_description']); ?></p>
+                                        </div>
+                                        <div class="pr_switch_wrap">
+                                            <div class="product_color_switch">
+                                                <span class="active" data-color="#87554B"></span>
+                                                <span data-color="#333333"></span>
+                                                <span data-color="#DA323F"></span>
+                                            </div>
+                                        </div>
+                                        <div class="list_product_action_box">
+                                            <ul class="list_none pr_action_btn">
+                                                <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
+                                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
+                                                <li><a href="#"><i class="icon-heart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">Blue Dress For Woman</a></h6>
-                                <div class="product_price">
-                                    <span class="price">$45.00</span>
-                                    <del>$55.25</del>
-                                    <div class="on_sale">
-                                        <span>35% Off</span>
-                                    </div>
-                                </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:80%"></div>
-                                    </div>
-                                    <span class="rating_num">(21)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        <span class="active" data-color="#87554B"></span>
-                                        <span data-color="#333333"></span>
-                                        <span data-color="#DA323F"></span>
-                                    </div>
-                                </div>
-                                <div class="list_product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <div class="col-12">
+                            <p>No products found in this subcategory.</p>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-6">
-                        <div class="product">
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img2.jpg" alt="product_img2">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">Lether Gray Tuxedo</a></h6>
-                                <div class="product_price">
-                                    <span class="price">$55.00</span>
-                                    <del>$95.00</del>
-                                    <div class="on_sale">
-                                        <span>25% Off</span>
-                                    </div>
-                                </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:68%"></div>
-                                    </div>
-                                    <span class="rating_num">(15)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        <span class="active" data-color="#847764"></span>
-                                        <span data-color="#0393B5"></span>
-                                        <span data-color="#DA323F"></span>
-                                    </div>
-                                </div>
-                                <div class="list_product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-6">
-                        <div class="product">
-                            <span class="pr_flash">New</span>
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img3.jpg" alt="product_img3">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">woman full sliv dress</a></h6>
-                                <div class="product_price">
-                                    <span class="price">$68.00</span>
-                                    <del>$99.00</del>
-                                </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:87%"></div>
-                                    </div>
-                                    <span class="rating_num">(25)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        <span class="active" data-color="#333333"></span>
-                                        <span data-color="#7C502F"></span>
-                                        <span data-color="#2F366C"></span>
-                                        <span data-color="#874A3D"></span>
-                                    </div>
-                                </div>
-                                <div class="list_product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-6">
-                        <div class="product">
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img4.jpg" alt="product_img4">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">light blue Shirt</a></h6>
-                                <div class="product_price">
-                                    <span class="price">$69.00</span>
-                                    <del>$89.00</del>
-                                    <div class="on_sale">
-                                        <span>20% Off</span>
-                                    </div>
-                                </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:70%"></div>
-                                    </div>
-                                    <span class="rating_num">(22)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        <span class="active" data-color="#333333"></span>
-                                        <span data-color="#A92534"></span>
-                                        <span data-color="#B9C2DF"></span>
-                                    </div>
-                                </div>
-                                <div class="list_product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-6">
-                        <div class="product">
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img5.jpg" alt="product_img5">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">blue dress for woman</a></h6>
-                                <div class="product_price">
-                                    <span class="price">$45.00</span>
-                                    <del>$55.25</del>
-                                    <div class="on_sale">
-                                        <span>35% Off</span>
-                                    </div>
-                                </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:80%"></div>
-                                    </div>
-                                    <span class="rating_num">(21)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        <span class="active" data-color="#87554B"></span>
-                                        <span data-color="#333333"></span>
-                                        <span data-color="#5FB7D4"></span>
-                                    </div>
-                                </div>
-                                <div class="list_product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-6">
-                        <div class="product">
-                            <span class="pr_flash bg-danger">Hot</span>
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img6.jpg" alt="product_img6">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">Blue casual check shirt</a></h6>
-                                <div class="product_price">
-                                    <span class="price">$55.00</span>
-                                    <del>$95.00</del>
-                                    <div class="on_sale">
-                                        <span>25% Off</span>
-                                    </div>
-                                </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:68%"></div>
-                                    </div>
-                                    <span class="rating_num">(15)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        <span class="active" data-color="#87554B"></span>
-                                        <span data-color="#333333"></span>
-                                    </div>
-                                </div>
-                                <div class="list_product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-6">
-                        <div class="product">
-                            <span class="pr_flash bg-success">Sale</span>
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img7.jpg" alt="product_img7">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">white black line dress</a></h6>
-                                <div class="product_price">
-                                    <span class="price">$68.00</span>
-                                    <del>$99.00</del>
-                                    <div class="on_sale">
-                                        <span>20% Off</span>
-                                    </div>
-                                </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:87%"></div>
-                                    </div>
-                                    <span class="rating_num">(25)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        <span class="active" data-color="#333333"></span>
-                                        <span data-color="#7C502F"></span>
-                                        <span data-color="#2F366C"></span>
-                                    </div>
-                                </div>
-                                <div class="list_product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-6">
-                        <div class="product">
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img8.jpg" alt="product_img8">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">Men blue jins Shirt</a></h6>
-                                <div class="product_price">
-                                    <span class="price">$69.00</span>
-                                    <del>$89.00</del>
-                                    <div class="on_sale">
-                                        <span>20% Off</span>
-                                    </div>
-                                </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:70%"></div>
-                                    </div>
-                                    <span class="rating_num">(22)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        <span class="active" data-color="#333333"></span>
-                                        <span data-color="#444653"></span>
-                                        <span data-color="#B9C2DF"></span>
-                                    </div>
-                                </div>
-                                <div class="list_product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-6">
-                        <div class="product">
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img9.jpg" alt="product_img9">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">T-Shirt Form Girls</a></h6>
-                                <div class="product_price">
-                                    <span class="price">$45.00</span>
-                                    <del>$55.25</del>
-                                    <div class="on_sale">
-                                        <span>35% Off</span>
-                                    </div>
-                                </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:80%"></div>
-                                    </div>
-                                    <span class="rating_num">(21)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        <span class="active" data-color="#B5B6BB"></span>
-                                        <span data-color="#333333"></span>
-                                        <span data-color="#DA323F"></span>
-                                    </div>
-                                </div>
-                                <div class="list_product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endif; ?>,
                 </div>
         		<div class="row">
                     <div class="col-12">
@@ -939,18 +552,123 @@
                     </div>
                 </div>
         	</div>
+
             <div class="col-lg-3 order-lg-first mt-4 pt-2 mt-lg-0 pt-lg-0">
             	<div class="sidebar">
                 	<div class="widget">
                         <h5 class="widget_title">Categories</h5>
                         <ul class="widget_categories">
-                            <li><a href="#"><span class="categories_name">Women</span><span class="categories_num">(9)</span></a></li>
-                            <li><a href="#"><span class="categories_name">Top</span><span class="categories_num">(6)</span></a></li>
-                            <li><a href="#"><span class="categories_name">T-Shirts</span><span class="categories_num">(4)</span></a></li>
-                            <li><a href="#"><span class="categories_name">Men</span><span class="categories_num">(7)</span></a></li>
-                            <li><a href="#"><span class="categories_name">Shoes</span><span class="categories_num">(12)</span></a></li>
+                            <?php foreach ($categories as $categoryId => $category): ?>
+                                <li class="category-item">
+                                    <div class="category-header">
+                                        <span class="categories_name"><?php echo esc($category['name']); ?></span>
+                                        <span class="categories_num">(<?php echo esc($category['product_count']); ?>)</span>
+                                        <?php if (!empty($category['subcategories'])): ?>
+                                            <span class="toggle-icon">+</span>
+                                        <?php endif; ?>
+                                    </div>
+                                    <?php if (!empty($category['subcategories'])): ?>
+                                        <ul class="subcategory_list" style="display: none;">
+                                            <?php foreach ($category['subcategories'] as $subcategory): ?>
+                                                <li>
+                                                    <a href="<?php echo esc($subcategory['url']); ?>" class="categories_name">
+                                                        <span class="subcategory_name"><?php echo esc($subcategory['name']); ?></span>
+                                                        <span class="subcategory_num">(<?php echo esc($subcategory['product_count']); ?>)</span>
+                                                    </a>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif; ?>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
+                        <?php if (!empty($selected_subcategory)): ?>
+                            <h3 class="section_title"><?php echo esc($selected_subcategory['subcategory_name']); ?></h3>
+                        <?php endif; ?>
                     </div>
+
+                    <style>
+                    .widget_categories {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    .category-item {
+                        margin-bottom: 10px;
+                    }
+
+                    .category-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 8px 12px;
+                        background-color: #f5f5f5;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        transition: background-color 0.3s;
+                    }
+
+                    .category-header:hover {
+                        background-color: #e0e0e0;
+                    }
+
+                    .categories_name {
+                        font-size: 16px;
+                    }
+
+                    .categories_num {
+                        font-size: 14px;
+                        color: #777;
+                    }
+
+                    .toggle-icon {
+                        font-size: 16px;
+                        font-weight: bold;
+                        color: #FF324D;
+                    }
+
+                    .subcategory_list {
+                        list-style: none;
+                        padding: 0;
+                        margin-left: 15px;
+                        margin-top: 5px;
+                    }
+
+                    .subcategory_list li a.categories_name {
+                        font-size: 14px;
+                        color: #555;
+                        text-decoration: none;
+                        display: block;
+                        padding: 5px 0;
+                    }
+
+                    .subcategory_list li a.categories_name:hover {
+                        color: #FF324D;
+                        text-decoration: underline;
+                    }
+                    </style>
+
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const categoryHeaders = document.querySelectorAll('.category-header');
+                        
+                        categoryHeaders.forEach(header => {
+                            header.addEventListener('click', function () {
+                                const subcategoryList = this.nextElementSibling;
+                                const toggleIcon = this.querySelector('.toggle-icon');
+                                
+                                if (subcategoryList && subcategoryList.classList.contains('subcategory_list')) {
+                                    const isVisible = subcategoryList.style.display === 'block';
+                                    subcategoryList.style.display = isVisible ? 'none' : 'block';
+                                    toggleIcon.textContent = isVisible ? '+' : '−';
+                                }
+                            });
+                        });
+                    });
+                    </script>
+
+
                     <div class="widget">
                     	<h5 class="widget_title">Filter</h5>
                         <div class="filter_price">
@@ -1008,32 +726,7 @@
                             <span>2xl</span>
                             <span>3xl</span>
                         </div>
-                    </div>
-                    <div class="widget">
-                    	<h5 class="widget_title">Color</h5>
-                        <div class="product_color_switch">
-                            <span data-color="#87554B"></span>
-                            <span data-color="#333333"></span>
-                            <span data-color="#DA323F"></span>
-                            <span data-color="#2F366C"></span>
-                            <span data-color="#B5B6BB"></span>
-                            <span data-color="#B9C2DF"></span>
-                            <span data-color="#5FB7D4"></span>
-                            <span data-color="#2F366C"></span>
-                        </div>
-                    </div>
-                    <div class="widget">
-                        <div class="shop_banner">
-                            <div class="banner_img overlay_bg_20">
-                                <img src="assets/images/sidebar_banner_img.jpg" alt="sidebar_banner_img">
-                            </div> 
-                            <div class="shop_bn_content2 text_white">
-                                <h5 class="text-uppercase shop_subtitle">New Collection</h5>
-                                <h3 class="text-uppercase shop_title">Sale 30% Off</h3>
-                                <a href="#" class="btn btn-white rounded-0 btn-sm text-uppercase">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>
@@ -1152,35 +845,35 @@
 <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a> 
 
 <!-- Latest jQuery --> 
-<script src="assets/js/jquery-1.12.4.min.js"></script> 
-<!-- jquery-ui --> 
-<script src="assets/js/jquery-ui.js"></script>
-<!-- popper min js -->
-<script src="assets/js/popper.min.js"></script>
+<script src="<?= base_url('assets/js/jquery-1.12.4.min.js'); ?>"></script> 
+<!-- jQuery UI --> 
+<script src="<?= base_url('assets/js/jquery-ui.js'); ?>"></script>
+<!-- Popper min JS -->
+<script src="<?= base_url('assets/js/popper.min.js'); ?>"></script>
 <!-- Latest compiled and minified Bootstrap --> 
-<script src="assets/bootstrap/js/bootstrap.min.js"></script> 
-<!-- owl-carousel min js  --> 
-<script src="assets/owlcarousel/js/owl.carousel.min.js"></script> 
-<!-- magnific-popup min js  --> 
-<script src="assets/js/magnific-popup.min.js"></script> 
-<!-- waypoints min js  --> 
-<script src="assets/js/waypoints.min.js"></script> 
-<!-- parallax js  --> 
-<script src="assets/js/parallax.js"></script> 
-<!-- countdown js  --> 
-<script src="assets/js/jquery.countdown.min.js"></script> 
-<!-- imagesloaded js --> 
-<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-<!-- isotope min js --> 
-<script src="assets/js/isotope.min.js"></script>
-<!-- jquery.dd.min js -->
-<script src="assets/js/jquery.dd.min.js"></script>
-<!-- slick js -->
-<script src="assets/js/slick.min.js"></script>
-<!-- elevatezoom js -->
-<script src="assets/js/jquery.elevatezoom.js"></script>
-<!-- scripts js --> 
-<script src="assets/js/scripts.js"></script>
+<script src="<?= base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script> 
+<!-- Owl Carousel min JS  --> 
+<script src="<?= base_url('assets/owlcarousel/js/owl.carousel.min.js'); ?>"></script> 
+<!-- Magnific Popup min JS  --> 
+<script src="<?= base_url('assets/js/magnific-popup.min.js'); ?>"></script> 
+<!-- Waypoints min JS  --> 
+<script src="<?= base_url('assets/js/waypoints.min.js'); ?>"></script> 
+<!-- Parallax JS  --> 
+<script src="<?= base_url('assets/js/parallax.js'); ?>"></script> 
+<!-- Countdown JS  --> 
+<script src="<?= base_url('assets/js/jquery.countdown.min.js'); ?>"></script> 
+<!-- ImagesLoaded JS --> 
+<script src="<?= base_url('assets/js/imagesloaded.pkgd.min.js'); ?>"></script>
+<!-- Isotope min JS --> 
+<script src="<?= base_url('assets/js/isotope.min.js'); ?>"></script>
+<!-- jQuery.dd.min JS -->
+<script src="<?= base_url('assets/js/jquery.dd.min.js'); ?>"></script>
+<!-- Slick JS -->
+<script src="<?= base_url('assets/js/slick.min.js'); ?>"></script>
+<!-- ElevateZoom JS -->
+<script src="<?= base_url('assets/js/jquery.elevatezoom.js'); ?>"></script>
+<!-- Custom Scripts JS --> 
+<script src="<?= base_url('assets/js/scripts.js'); ?>"></script>
 
 </body>
 </html>

@@ -1,0 +1,234 @@
+CRITICAL - 2025-05-30 01:27:57 --> ErrorException: Undefined variable $productModel
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 365.
+ 1 APPPATH\Views\home.php(365): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productModel', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 365)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(141): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-30 01:28:26 --> ErrorException: Undefined variable $productModel
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 365.
+ 1 APPPATH\Views\home.php(365): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productModel', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 365)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(141): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-30 01:28:58 --> ErrorException: Undefined variable $productModel
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 365.
+ 1 APPPATH\Views\home.php(365): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productModel', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 365)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(141): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-30 01:29:08 --> ErrorException: Undefined variable $productModel
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 365.
+ 1 APPPATH\Views\home.php(365): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productModel', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 365)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(141): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-30 01:29:28 --> ErrorException: Undefined variable $productModel
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 365.
+ 1 APPPATH\Views\home.php(365): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productModel', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 365)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(159): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-30 01:33:04 --> ErrorException: Undefined variable $productModel
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 365.
+ 1 APPPATH\Views\home.php(365): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productModel', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 365)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(141): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-30 01:34:34 --> ErrorException: Undefined variable $productModel
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 365.
+ 1 APPPATH\Views\home.php(365): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productModel', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 365)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(141): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-30 01:34:46 --> ErrorException: Undefined variable $productCount
+[Method: GET, Route: /]
+in APPPATH\Views\home.php on line 364.
+ 1 APPPATH\Views\home.php(364): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productCount', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php', 364)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(141): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-30 01:35:51 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 01:35:51 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 01:35:51 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 01:35:51 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 01:35:51 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 01:35:51 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 01:35:51 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 01:36:01 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 01:36:01 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 01:36:01 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 01:36:01 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 01:36:01 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 01:36:01 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 01:36:01 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+CRITICAL - 2025-05-30 01:41:25 --> ErrorException: Undefined variable $shop
+[Method: GET, Route: shop-list/13]
+in APPPATH\Views\shop_list.php on line 423.
+ 1 APPPATH\Views\shop_list.php(423): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $shop', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\shop_list.php', 423)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\shop_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('shop_list', [], true)
+ 5 APPPATH\Controllers\ShopList.php(9): view('shop_list')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopList->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopList))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-30 01:47:16 --> Error: Cannot access protected property CodeIgniter\HTTP\IncomingRequest::$uri
+[Method: GET, Route: shop-list/14]
+in APPPATH\Controllers\ShopList.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopList->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopList))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-30 01:51:40 --> CodeIgniter\Pager\Exceptions\PagerException: "pagination_style1" is not a valid Pager template.
+[Method: GET, Route: shop-list/9]
+in SYSTEMPATH\Pager\Pager.php on line 124.
+ 1 SYSTEMPATH\Pager\Pager.php(124): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('pagination_style1')
+ 2 SYSTEMPATH\Pager\Pager.php(87): CodeIgniter\Pager\Pager->displayLinks('products', 'pagination_style1')
+ 3 APPPATH\Views\shop_list.php(549): CodeIgniter\Pager\Pager->links('products', 'pagination_style1')
+ 4 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\shop_list.php')
+ 5 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('shop_list', [], true)
+ 7 APPPATH\Controllers\ShopList.php(110): view('shop_list', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopList->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopList))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-30 01:55:40 --> ErrorException: Undefined property: Config\Pager::$perPage
+[Method: GET, Route: shop-list/9]
+in SYSTEMPATH\Pager\Pager.php on line 407.
+ 1 SYSTEMPATH\Pager\Pager.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\Pager::$perPage', 'C:\\wamp64\\www\\MrachentEase\\system\\Pager\\Pager.php', 407)
+ 2 SYSTEMPATH\Pager\Pager.php(217): CodeIgniter\Pager\Pager->ensureGroup('products')
+ 3 SYSTEMPATH\BaseModel.php(1282): CodeIgniter\Pager\Pager->getCurrentPage('products')
+ 4 APPPATH\Controllers\ShopList.php(60): CodeIgniter\BaseModel->paginate(9, 'products')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopList->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopList))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-30 01:57:53 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: shop-list/9]
+in APPPATH\Views\shop_list.php on line 447.
+ 1 APPPATH\Views\shop_list.php(447): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\shop_list.php', 447)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\shop_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('shop_list', [], true)
+ 5 APPPATH\Controllers\ShopList.php(107): view('shop_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopList->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopList))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-30 02:21:06 --> ErrorException: Undefined array key "image"
+[Method: GET, Route: shop-list/11]
+in APPPATH\Views\shop_list.php on line 437.
+ 1 APPPATH\Views\shop_list.php(437): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\shop_list.php', 437)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\shop_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('shop_list', [], true)
+ 5 APPPATH\Controllers\ShopList.php(55): view('shop_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopList->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopList))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-30 02:21:33 --> ErrorException: Undefined array key "image"
+[Method: GET, Route: shop-list/11]
+in APPPATH\Views\shop_list.php on line 437.
+ 1 APPPATH\Views\shop_list.php(437): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\shop_list.php', 437)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\shop_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('shop_list', [], true)
+ 5 APPPATH\Controllers\ShopList.php(55): view('shop_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ShopList->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShopList))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-30 02:44:20 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 02:44:21 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 02:44:21 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 02:44:21 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 02:44:21 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 02:44:21 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 02:44:21 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-30 02:44:36 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-30 02:44:36 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-30 02:44:36 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-30 02:44:36 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-30 02:44:36 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-30 02:44:36 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-30 02:44:36 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets

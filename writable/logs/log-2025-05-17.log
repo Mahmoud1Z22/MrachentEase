@@ -1,0 +1,136 @@
+ERROR - 2025-05-17 20:37:17 --> mysqli_sql_exception: Unknown column 'condition' in 'field list' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\Checkout.php(200): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Checkout->placeOrder()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-05-17 20:37:17 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`marchentease`.`suborders`, CONSTRAINT `suborders_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `su...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `su...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `su...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `su...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\Checkout.php(213): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Checkout->placeOrder()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-05-17 20:37:17 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`marchentease`.`suborder_items`, CONSTRAINT `suborder_items_ibfk_2` FOREIGN KEY (`suborder_id`) REFERENCES `suborders` (`suborder_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `su...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `su...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `su...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `su...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\Checkout.php(225): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Checkout->placeOrder()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-05-17 20:37:17 --> Transaction failed during order placement
+ERROR - 2025-05-17 20:37:17 --> Error placing order: Transaction failed. Please try again.
+ERROR - 2025-05-17 20:39:23 --> mysqli_sql_exception: Unknown column 'condition' in 'field list' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\Checkout.php(198): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Checkout->placeOrder()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-05-17 20:39:23 --> Error placing order: Failed to create order
+CRITICAL - 2025-05-17 20:42:04 --> ParseError: syntax error, unexpected single-quoted string "total_amount", expecting "]"
+[Method: GET, Route: checkout]
+in APPPATH\Controllers\Checkout.php on line 195.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\wamp64\\www\\MrachentEase\\app\\Controllers\\Checkout.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Checkout')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Checkout')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\Checkout', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-17 20:42:23 --> mysqli_sql_exception: Unknown column 'condition' in 'field list' in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `or...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `or...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `or...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `or...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\Checkout.php(200): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Checkout->placeOrder()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-05-17 20:42:23 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`marchentease`.`suborders`, CONSTRAINT `suborders_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `su...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `su...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `su...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `su...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\Checkout.php(213): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Checkout->placeOrder()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-05-17 20:42:23 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`marchentease`.`suborder_items`, CONSTRAINT `suborder_items_ibfk_2` FOREIGN KEY (`suborder_id`) REFERENCES `suborders` (`suborder_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) in C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\MrachentEase\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `su...', 0)
+#1 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `su...')
+#2 C:\wamp64\www\MrachentEase\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `su...')
+#3 C:\wamp64\www\MrachentEase\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `su...', Array, false)
+#4 C:\wamp64\www\MrachentEase\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\MrachentEase\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\MrachentEase\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\MrachentEase\app\Controllers\Checkout.php(225): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(933): App\Controllers\Checkout->placeOrder()
+#9 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+#10 C:\wamp64\www\MrachentEase\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\MrachentEase\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\MrachentEase\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\MrachentEase\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-05-17 20:42:23 --> Transaction failed during order placement
+ERROR - 2025-05-17 20:42:23 --> Error placing order: Transaction failed. Please try again.

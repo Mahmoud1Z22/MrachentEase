@@ -12,35 +12,35 @@
 <!-- SITE TITLE -->
 <title>MarchentEase</title>
 <!-- Favicon Icon -->
-<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+<link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/images/favicon.png'); ?>">
 <!-- Animation CSS -->
-<link rel="stylesheet" href="assets/css/animate.css">	
+<link rel="stylesheet" href="<?= base_url('assets/css/animate.css'); ?>">	
 <!-- Latest Bootstrap min CSS -->
-<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"> 
 <!-- Icon Font CSS -->
-<link rel="stylesheet" href="assets/css/all.min.css">
-<link rel="stylesheet" href="assets/css/ionicons.min.css">
-<link rel="stylesheet" href="assets/css/themify-icons.css">
-<link rel="stylesheet" href="assets/css/linearicons.css">
-<link rel="stylesheet" href="assets/css/flaticon.css">
-<link rel="stylesheet" href="assets/css/simple-line-icons.css">
-<!--- owl carousel CSS-->
-<link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.min.css">
-<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">
-<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="<?= base_url('assets/css/all.min.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/ionicons.min.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/themify-icons.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/linearicons.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/flaticon.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/simple-line-icons.css'); ?>">
+<!-- Owl carousel CSS -->
+<link rel="stylesheet" href="<?= base_url('assets/owlcarousel/css/owl.carousel.min.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/owlcarousel/css/owl.theme.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/owlcarousel/css/owl.theme.default.min.css'); ?>">
 <!-- Magnific Popup CSS -->
-<link rel="stylesheet" href="assets/css/magnific-popup.css">
-<!-- jquery-ui CSS -->
-<link rel="stylesheet" href="assets/css/jquery-ui.css">
+<link rel="stylesheet" href="<?= base_url('assets/css/magnific-popup.css'); ?>">
+<!-- jQuery UI CSS -->
+<link rel="stylesheet" href="<?= base_url('assets/css/jquery-ui.css'); ?>">
 <!-- Slick CSS -->
-<link rel="stylesheet" href="assets/css/slick.css">
-<link rel="stylesheet" href="assets/css/slick-theme.css">
+<link rel="stylesheet" href="<?= base_url('assets/css/slick.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/slick-theme.css'); ?>">
 <!-- Style CSS -->
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="<?= base_url('assets/css/style.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/responsive.css'); ?>">
 
 </head>
 
@@ -55,6 +55,59 @@
     </div>
 </div>
 <!-- END LOADER -->
+
+
+<?php
+// Initialize cart data
+$cart_count = 0;
+$cart_items = [];
+
+// Check if the user is logged in to fetch their cart items
+$logged_in = session()->get('logged_in');
+$user_id = session()->get('user_id');
+
+if ($logged_in && $user_id) {
+    $cartModel = new \App\Models\Cart_model();
+    $productModel = new \App\Models\Products_model();
+    $imageModel = new \App\Models\Product_images_model();
+
+    try {
+        // Fetch cart items for the user
+        $cart_items = $cartModel->where('customer_id', $user_id)->findAll();
+        log_message('debug', 'Cart items for dropdown: ' . json_encode($cart_items));
+
+        // Clear cart duplicates by cart_id or product_id
+        $cart_items = array_unique($cart_items, SORT_REGULAR); // Ensures no duplicates in the cart
+
+        // Fetch product details and images for each cart item
+        foreach ($cart_items as &$item) {
+            $product = $productModel->find($item['product_id']);
+            if ($product) {
+                $item['product_name'] = $product['product_name'];
+                $item['price'] = $product['price'];
+            } else {
+                $item['product_name'] = 'Unknown Product';
+                $item['price'] = 0.00;
+                log_message('error', 'Product not found for product_id: ' . $item['product_id']);
+            }
+
+            $image = $imageModel->where('product_id', $item['product_id'])->first();
+            $item['image'] = $image && !empty($image['image']) ? $image['image'] : 'images/default_product.jpg';
+        }
+
+        // Calculate cart count
+        $cart_count = count($cart_items);
+        log_message('debug', 'Cart count for user_id ' . $user_id . ': ' . $cart_count);
+    } catch (\Exception $e) {
+        log_message('error', 'Error fetching cart items for dropdown: ' . $e->getMessage());
+        $cart_count = 0;
+        $cart_items = [];
+    }
+}
+?>
+
+
+
 
 
 <!-- START HEADER -->
@@ -79,7 +132,21 @@
                             </select>
                         </div> -->
                         <ul class="contact_detail text-center text-lg-left">
-                            <li><i class="ti-mobile"></i><span>123-456-7890</span></li>
+                            <li>
+                                <i class="ti-mobile"></i>
+                                <span>123-456-7890</span>
+                                <i></i>
+                                <?php if (session()->get('logged_in')): ?>
+                                    <b>
+                                        Hi
+                                    </b>
+                                    <a href="<?php echo site_url('account_details'); ?>">
+                                        <b>
+                                            <?php echo session()->get('logged_in') ? esc(session()->get('userName')) : 'Guest'; ?>
+                                        </b>
+                                    </a>
+                                <?php endif; ?>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -87,8 +154,14 @@
                 	<div class="text-center text-md-right">
                        	<ul class="header_list">
                         	<li><a href="compare.html"><i class="ti-control-shuffle"></i><span>Compare</span></a></li>
-                            <li><a href="wishlist.html"><i class="ti-heart"></i><span>Wishlist</span></a></li>
-                            <li><a href="<?php echo site_url('login'); ?>"><i class="ti-user"></i><span>Login</span></a></li>
+                            <li><a href="<?php echo site_url('wishlist'); ?>"><i class="ti-heart"></i><span>Wishlist</span></a></li>
+                            <li>
+                                <?php if (session()->get('logged_in')): ?>
+                                    <a href="<?php echo site_url('logout'); ?>"><i class="ti-user"></i><span>Logout</span></a>
+                                <?php else: ?>
+                                    <a href="<?php echo site_url('login'); ?>"><i class="ti-user"></i><span>Login</span></a>
+                                <?php endif; ?>
+                            </li>
 						</ul>
                     </div>
                 </div>
@@ -101,7 +174,7 @@
                 
                 <a class="navbar-brand" href="<?php echo site_url(''); ?>">
                     <h2>
-                        <img src="assets/images/favicon.png" alt="">
+                        <img src=<?= base_url("assets/images/favicon.png") ?> alt="">
                         <b>MarchentEase</b>
                     </h2>
                 </a>
@@ -378,26 +451,69 @@
                             </form>
                         </div><div class="search_overlay"></div>
                     </li>
-                    <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#" data-toggle="dropdown"><i class="linearicons-cart"></i><span class="cart_count">2</span></a>
-                        <div class="cart_box dropdown-menu dropdown-menu-right">
-                            <ul class="cart_list">
-                                <li>
-                                    <a href="#" class="item_remove"><i class="ion-close"></i></a>
-                                    <a href="#"><img src="assets/images/cart_thamb1.jpg" alt="cart_thumb1">Variable product 001</a>
-                                    <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>78.00</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="item_remove"><i class="ion-close"></i></a>
-                                    <a href="#"><img src="assets/images/cart_thamb2.jpg" alt="cart_thumb2">Ornare sed consequat</a>
-                                    <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>81.00</span>
-                                </li>
-                            </ul>
-                            <div class="cart_footer">
-                                <p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">$</span></span>159.00</p>
-                                <p class="cart_buttons"><a href="#" class="btn btn-fill-line rounded-0 view-cart">View Cart</a><a href="#" class="btn btn-fill-out rounded-0 checkout">Checkout</a></p>
+
+                    <?php if (session()->get('logged_in')): ?>
+                        <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#" data-toggle="dropdown"><i class="linearicons-cart"></i><span class="cart_count"><?php echo $cart_count; ?></span></a>
+                            <div class="cart_box dropdown-menu dropdown-menu-right">
+                                <ul class="cart_list">
+                                        <?php if (empty($cart_items)): ?>
+                                            <li>
+                                                <span class="cart_quantity">Your cart is empty.</span>
+                                            </li>
+                                        <?php else: ?>
+                                            <?php foreach ($cart_items as $item): ?>
+                                                <li>
+                                                    <a href="<?php echo site_url('cart/remove/' . $item['cart_id']); ?>" class="item_remove">
+                                                        <i class="ion-close"></i>
+                                                    </a>
+                                                    <a href="<?php echo site_url('product_details/' . $item['product_id']); ?>">
+                                                        <img src="<?php echo base_url('assets/' . esc($item['image'])); ?>" alt="<?php echo esc($item['product_name']); ?>">
+                                                        <?php echo esc($item['product_name']); ?>
+                                                    </a>
+                                                    <span class="cart_quantity">
+                                                        <?php echo $item['quantity']; ?> x
+                                                        <span class="cart_amount">
+                                                            <span class="price_symbole">$</span>
+                                                            <?php echo number_format($item['price'], 2); ?>
+                                                        </span>
+                                                    </span>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                    </ul>
+                                    <div class="cart_footer">
+                                        <p class="cart_total">
+                                            <strong>Subtotal:</strong>
+                                            <span class="cart_price">
+                                                <span class="price_symbole">$</span>
+                                                <?php
+                                                $subtotal = 0;
+                                                foreach ($cart_items as $item) {
+                                                    $subtotal += $item['price'] * $item['quantity'];
+                                                }
+                                                echo number_format($subtotal, 2);
+                                                ?>
+                                            </span>
+                                        </p>
+                                        <p class="cart_buttons">
+                                            <a href="<?php echo site_url('cart'); ?>" class="btn btn-fill-line rounded-0 view-cart">View Cart</a>
+                                            <a href="<?php echo site_url('checkout'); ?>" class="btn btn-fill-out rounded-0 checkout">Checkout</a>
+                                        </p>
+                                    </div>
                             </div>
                         </div>
                     </li>
+                    <?php else: ?>
+                        <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#" data-toggle="dropdown"><i class="linearicons-cart"></i></a>
+                            <div class="cart_box dropdown-menu dropdown-menu-centered">
+                                <div class="cart_footer">
+                                    <p class="cart_total"><strong>Please login to view your cart</strong></p>
+                                    <p class="cart_buttons"><a href="<?php echo site_url('login'); ?>" class="btn btn-fill-out rounded-0 checkout">Login</a></p>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endif; ?>
+                    
                 </ul>
             </nav>
         </div>
@@ -405,40 +521,21 @@
 </header>
 <!-- END HEADER -->
 
-<!-- START SECTION BREADCRUMB -->
-<div class="breadcrumb_section bg_gray page-title-mini">
-    <div class="container"><!-- STRART CONTAINER -->
-        <div class="row align-items-center">
-        	<div class="col-md-6">
-                <div class="page-title">
-            		<h1>Wishlist</h1>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <ol class="breadcrumb justify-content-md-end">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active">Wishlist</li>
-                </ol>
-            </div>
-        </div>
-    </div><!-- END CONTAINER-->
-</div>
-<!-- END SECTION BREADCRUMB -->
+
 
 <!-- START MAIN CONTENT -->
 <div class="main_content">
 
 <!-- START SECTION SHOP -->
 <div class="section">
-	<div class="container">
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="table-responsive wishlist_table">
-                	<table class="table">
-                    	<thead>
-                        	<tr>
-                            	<th class="product-thumbnail">&nbsp;</th>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="product-thumbnail">&nbsp;</th>
                                 <th class="product-name">Product</th>
                                 <th class="product-price">Price</th>
                                 <th class="product-stock-status">Stock Status</th>
@@ -447,30 +544,44 @@
                             </tr>
                         </thead>
                         <tbody>
-                        	<tr>
-                            	<td class="product-thumbnail"><a href="#"><img src="assets/images/product_img1.jpg" alt="product1"></a></td>
-                                <td class="product-name" data-title="Product"><a href="#">Blue Dress For Woman</a></td>
-                                <td class="product-price" data-title="Price">$45.00</td>
-                              	<td class="product-stock-status" data-title="Stock Status"><span class="badge badge-pill badge-success">In Stock</span></td>
-                                <td class="product-add-to-cart"><a href="#" class="btn btn-fill-out"><i class="icon-basket-loaded"></i> Add to Cart</a></td>
-                                <td class="product-remove" data-title="Remove"><a href="#"><i class="ti-close"></i></a></td>
-                            </tr>
-                            <tr>
-                            	<td class="product-thumbnail"><a href="#"><img src="assets/images/product_img2.jpg" alt="product2"></a></td>
-                                <td class="product-name" data-title="Product"><a href="#">Lether Gray Tuxedo</a></td>
-                                <td class="product-price" data-title="Price">$55.00</td>
-                              	<td class="product-stock-status" data-title="Stock Status"><span class="badge badge-pill badge-success">In Stock</span></td>
-                                <td class="product-add-to-cart"><a href="#" class="btn btn-fill-out"><i class="icon-basket-loaded"></i> Add to Cart</a></td>
-                                <td class="product-remove" data-title="Remove"><a href="#"><i class="ti-close"></i></a></td>
-                            </tr>
-                            <tr>
-                            	<td class="product-thumbnail"><a href="#"><img src="assets/images/product_img3.jpg" alt="product3"></a></td>
-                                <td class="product-name" data-title="Product"><a href="#">woman full sliv dress</a></td>
-                                <td class="product-price" data-title="Price">$68.00</td>
-                              	<td class="product-stock-status" data-title="Stock Status"><span class="badge badge-pill badge-success">In Stock</span></td>
-                                <td class="product-add-to-cart"><a href="#" class="btn btn-fill-out"><i class="icon-basket-loaded"></i> Add to Cart</a></td>
-                                <td class="product-remove" data-title="Remove"><a href="#"><i class="ti-close"></i></a></td>
-                            </tr>
+                            <?php if (empty($wishlist)): ?>
+                                <tr>
+                                    <td colspan="6" class="text-center">Your wishlist is empty.</td>
+                                </tr>
+                            <?php else: ?>
+                                <?php foreach ($wishlist as $item): ?>
+                                    <tr>
+                                        <td class="product-thumbnail">
+                                            <a href="<?php echo site_url('product_details/' . $item['product_id']); ?>">
+                                                <img src="<?php echo base_url(esc($item['image'])); ?>" alt="<?php echo esc($item['product_name']); ?>">
+                                            </a>
+                                        </td>
+                                        <td class="product-name" data-title="Product">
+                                            <a href="<?php echo site_url('product_details/' . $item['product_id']); ?>">
+                                                <?php echo esc($item['product_name']); ?>
+                                            </a>
+                                        </td>
+                                        <td class="product-price" data-title="Price">
+                                            $<?php echo number_format($item['price'], 2); ?>
+                                        </td>
+                                        <td class="product-stock-status" data-title="Stock Status">
+                                            <span class="badge badge-pill badge-<?php echo $item['stock_status'] === 'in_stock' ? 'success' : ($item['stock_status'] === 'pre_order' ? 'warning' : 'danger'); ?>">
+                                                <?php echo $item['stock_status'] === 'in_stock' ? 'In Stock' : ($item['stock_status'] === 'pre_order' ? 'Pre Order' : 'Out of Stock'); ?>
+                                            </span>
+                                        </td>
+                                        <td class="product-add-to-cart">
+                                            <a href="<?php echo site_url('cart/add/' . $item['product_id']); ?>" class="btn btn-fill-out">
+                                                <i class="icon-basket-loaded"></i> Add to Cart
+                                            </a>
+                                        </td>
+                                        <td class="product-remove" data-title="Remove">
+                                            <a href="<?php echo site_url('wishlist/remove/' . $item['product_id']); ?>">
+                                                <i class="ti-close"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
@@ -515,7 +626,7 @@
                 	<div class="widget">
                         <div class="footer_logo">
                             <h3>
-                                <img src="assets/images/favicon.png" alt="">
+                                <img src=<?= base_url("assets/images/favicon.png") ?> alt="">
                                 <b style="color: white;">MarchentEase</b>
                             </h3>
                         </div>
@@ -613,35 +724,35 @@
 <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a> 
 
 <!-- Latest jQuery --> 
-<script src="assets/js/jquery-1.12.4.min.js"></script> 
-<!-- jquery-ui --> 
-<script src="assets/js/jquery-ui.js"></script>
-<!-- popper min js -->
-<script src="assets/js/popper.min.js"></script>
+<script src="<?= base_url('assets/js/jquery-1.12.4.min.js'); ?>"></script> 
+<!-- jQuery UI --> 
+<script src="<?= base_url('assets/js/jquery-ui.js'); ?>"></script>
+<!-- Popper min JS -->
+<script src="<?= base_url('assets/js/popper.min.js'); ?>"></script>
 <!-- Latest compiled and minified Bootstrap --> 
-<script src="assets/bootstrap/js/bootstrap.min.js"></script> 
-<!-- owl-carousel min js  --> 
-<script src="assets/owlcarousel/js/owl.carousel.min.js"></script> 
-<!-- magnific-popup min js  --> 
-<script src="assets/js/magnific-popup.min.js"></script> 
-<!-- waypoints min js  --> 
-<script src="assets/js/waypoints.min.js"></script> 
-<!-- parallax js  --> 
-<script src="assets/js/parallax.js"></script> 
-<!-- countdown js  --> 
-<script src="assets/js/jquery.countdown.min.js"></script> 
-<!-- imagesloaded js --> 
-<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-<!-- isotope min js --> 
-<script src="assets/js/isotope.min.js"></script>
-<!-- jquery.dd.min js -->
-<script src="assets/js/jquery.dd.min.js"></script>
-<!-- slick js -->
-<script src="assets/js/slick.min.js"></script>
-<!-- elevatezoom js -->
-<script src="assets/js/jquery.elevatezoom.js"></script>
-<!-- scripts js --> 
-<script src="assets/js/scripts.js"></script>
+<script src="<?= base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script> 
+<!-- Owl Carousel min JS  --> 
+<script src="<?= base_url('assets/owlcarousel/js/owl.carousel.min.js'); ?>"></script> 
+<!-- Magnific Popup min JS  --> 
+<script src="<?= base_url('assets/js/magnific-popup.min.js'); ?>"></script> 
+<!-- Waypoints min JS  --> 
+<script src="<?= base_url('assets/js/waypoints.min.js'); ?>"></script> 
+<!-- Parallax JS  --> 
+<script src="<?= base_url('assets/js/parallax.js'); ?>"></script> 
+<!-- Countdown JS  --> 
+<script src="<?= base_url('assets/js/jquery.countdown.min.js'); ?>"></script> 
+<!-- ImagesLoaded JS --> 
+<script src="<?= base_url('assets/js/imagesloaded.pkgd.min.js'); ?>"></script>
+<!-- Isotope min JS --> 
+<script src="<?= base_url('assets/js/isotope.min.js'); ?>"></script>
+<!-- jQuery.dd.min JS -->
+<script src="<?= base_url('assets/js/jquery.dd.min.js'); ?>"></script>
+<!-- Slick JS -->
+<script src="<?= base_url('assets/js/slick.min.js'); ?>"></script>
+<!-- ElevateZoom JS -->
+<script src="<?= base_url('assets/js/jquery.elevatezoom.js'); ?>"></script>
+<!-- Custom Scripts JS --> 
+<script src="<?= base_url('assets/js/scripts.js'); ?>"></script>
 
 </body>
 </html>

@@ -20,6 +20,8 @@ class App extends BaseConfig
     public string $baseURL = 'http://localhost/MrachentEase/public/';
     public $environment = 'development';
 
+    // Removed duplicate declaration of $appTimezone
+
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
      * If you want to accept multiple Hostnames, set this.
@@ -135,7 +137,8 @@ class App extends BaseConfig
      * @see https://www.php.net/manual/en/timezones.php for list of timezones
      *      supported by PHP.
      */
-    public string $appTimezone = 'UTC';
+    public string $appTimezone = 'Europe/Helsinki';
+    
 
     /**
      * --------------------------------------------------------------------------

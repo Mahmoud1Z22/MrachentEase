@@ -8,7 +8,7 @@ class Suborder_model extends Model
 {
     protected $table = 'suborders';
     protected $primaryKey = 'suborder_id';
-    protected $allowedFields = ['order_id', 'shop_id', 'subtotal', 'status'];
+    protected $allowedFields = ['order_id', 'shop_id', 'subtotal', 'status','condition'];
 
     // Specify the return type as an array
     protected $returnType = 'array';

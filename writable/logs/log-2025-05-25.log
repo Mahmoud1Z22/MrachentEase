@@ -1,0 +1,85 @@
+CRITICAL - 2025-05-25 17:18:35 --> ErrorException: Undefined array key "subcategory_id"
+[Method: GET, Route: marchent_account]
+in APPPATH\Views\marchent_account.php on line 448.
+ 1 APPPATH\Views\marchent_account.php(448): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "subcategory_id"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\marchent_account.php', 448)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\marchent_account.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('marchent_account', [], true)
+ 5 APPPATH\Controllers\MarchentAccount.php(97): view('marchent_account', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 17:18:37 --> ErrorException: Undefined array key "subcategory_id"
+[Method: GET, Route: marchent_account]
+in APPPATH\Views\marchent_account.php on line 448.
+ 1 APPPATH\Views\marchent_account.php(448): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "subcategory_id"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\marchent_account.php', 448)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\marchent_account.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('marchent_account', [], true)
+ 5 APPPATH\Controllers\MarchentAccount.php(97): view('marchent_account', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 17:18:57 --> ErrorException: Undefined array key "subcategory_id"
+[Method: GET, Route: marchent_account]
+in APPPATH\Views\marchent_account.php on line 448.
+ 1 APPPATH\Views\marchent_account.php(448): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "subcategory_id"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\marchent_account.php', 448)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\marchent_account.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('marchent_account', [], true)
+ 5 APPPATH\Controllers\MarchentAccount.php(97): view('marchent_account', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 17:18:58 --> ErrorException: Undefined array key "subcategory_id"
+[Method: GET, Route: marchent_account]
+in APPPATH\Views\marchent_account.php on line 448.
+ 1 APPPATH\Views\marchent_account.php(448): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "subcategory_id"', 'C:\\wamp64\\www\\MrachentEase\\app\\Views\\marchent_account.php', 448)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\MrachentEase\\app\\Views\\marchent_account.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('marchent_account', [], true)
+ 5 APPPATH\Controllers\MarchentAccount.php(97): view('marchent_account', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MarchentAccount->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MarchentAccount))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 21:41:26 --> Error: Class "App\Models\Categories_model" not found
+[Method: GET, Route: /]
+in APPPATH\Controllers\Home.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 21:43:05 --> BadMethodCallException: Call to undefined method App\Models\Category_model::getCategoriesWithSubcategories
+[Method: GET, Route: /]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Home.php(103): CodeIgniter\Model->__call('getCategoriesWithSubcategories', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-25 21:43:06 --> BadMethodCallException: Call to undefined method App\Models\Category_model::getCategoriesWithSubcategories
+[Method: GET, Route: /]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Home.php(103): CodeIgniter\Model->__call('getCategoriesWithSubcategories', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

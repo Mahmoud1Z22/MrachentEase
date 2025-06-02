@@ -1,0 +1,103 @@
+ERROR - 2025-05-31 19:39:28 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:39:28 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:39:28 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:39:28 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:39:28 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:39:28 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:39:28 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:39:43 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:39:43 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:39:43 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:39:43 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:39:43 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:39:43 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:39:43 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:40:53 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:40:53 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:40:53 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:40:53 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:40:53 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:40:53 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+ERROR - 2025-05-31 19:40:53 --> Subcategory not found for category_id: 1, sanitized subcategory_name: assets
+CRITICAL - 2025-05-31 21:05:04 --> ArgumentCountError: Too few arguments to function App\Controllers\ProductsList::subcategoryProducts(), 0 passed in C:\wamp64\www\MrachentEase\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: GET, Route: products-list/subcategory-products/2/lothing-ccessories]
+in APPPATH\Controllers\ProductsList.php on line 158.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductsList->subcategoryProducts()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsList))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-31 21:05:47 --> ArgumentCountError: Too few arguments to function App\Controllers\ProductsList::subcategoryProducts(), 0 passed in C:\wamp64\www\MrachentEase\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: GET, Route: products-list/subcategory-products/2/lothing-ccessories]
+in APPPATH\Controllers\ProductsList.php on line 145.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductsList->subcategoryProducts()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsList))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-31 21:05:53 --> ArgumentCountError: Too few arguments to function App\Controllers\ProductsList::subcategoryProducts(), 0 passed in C:\wamp64\www\MrachentEase\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: GET, Route: products-list/subcategory-products/2/lothing-ccessories]
+in APPPATH\Controllers\ProductsList.php on line 145.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductsList->subcategoryProducts()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsList))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-31 21:06:18 --> ArgumentCountError: Too few arguments to function App\Controllers\ProductsList::subcategoryProducts(), 0 passed in C:\wamp64\www\MrachentEase\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: GET, Route: products-list/subcategory-products/2/lothing-ccessories]
+in APPPATH\Controllers\ProductsList.php on line 158.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductsList->subcategoryProducts()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsList))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-31 21:15:05 --> ArgumentCountError: Too few arguments to function App\Controllers\ProductsList::subcategoryProducts(), 0 passed in C:\wamp64\www\MrachentEase\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: GET, Route: products-list/subcategory-products/2/lothing-ccessories]
+in APPPATH\Controllers\ProductsList.php on line 158.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductsList->subcategoryProducts()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsList))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-31 21:17:08 --> Missing parameters in subcategoryProducts: category_id = null, subcategory_name = null
+ERROR - 2025-05-31 21:19:24 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:19:24 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:19:24 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:19:24 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:19:24 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:19:24 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:19:24 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:19:57 --> Missing parameters in subcategoryProducts: category_id = null, subcategory_name = null
+ERROR - 2025-05-31 21:23:47 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:23:47 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:23:47 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:23:47 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:23:47 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:23:47 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:23:47 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:24:18 --> Subcategory not found for category_id: 3, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:24:18 --> Subcategory not found for category_id: 3, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:24:18 --> Subcategory not found for category_id: 3, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:24:18 --> Subcategory not found for category_id: 3, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:24:18 --> Subcategory not found for category_id: 3, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:24:18 --> Subcategory not found for category_id: 3, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:24:18 --> Subcategory not found for category_id: 3, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:34:59 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:34:59 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:34:59 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:34:59 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:34:59 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:34:59 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:34:59 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:40:10 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:40:10 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:40:10 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:40:10 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:40:10 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:40:10 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets
+ERROR - 2025-05-31 21:40:11 --> Subcategory not found for category_id: 2, sanitized subcategory_name: assets

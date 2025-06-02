@@ -190,7 +190,9 @@
                         <a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false"><i class="ti-layout-grid2"></i>Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="orders-tab" data-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="false"><i class="ti-receipt"></i>Orders</a>
+                        <a class="nav-link" id="orders-tab" data-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="false"><i class="ti-receipt"></i>Orders      <?php if (isset($unseen_count) && $unseen_count > 0): ?>
+                                            <span class="badge badge-danger"><?php echo $unseen_count; ?> Unseen</span>
+                                        <?php endif; ?></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="products-tab" data-toggle="tab" href="#products" role="tab" aria-controls="products" aria-selected="false"><i class="ti-package"></i>Products</a>
@@ -213,54 +215,154 @@
             </div>
             <div class="col-lg-9 col-md-8">
                 <div class="tab-content dashboard_content">
-                  	<div class="tab-pane fade active show" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                    	<div class="card">
-                        	<div class="card-header">
-                                <h3>Dashboard</h3>
-                            </div>
+    <div class="tab-pane fade active show" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+        <div class="card">
+            <div class="card-header">
+                <h3>Dashboard</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="card bg-primary text-white">
                             <div class="card-body">
-                    			<p>From your account dashboard. you can easily check &amp; view your <a href="javascript:void(0);" onclick="$('#orders-tab').trigger('click')">recent orders</a>, manage your <a href="javascript:void(0);" onclick="$('#address-tab').trigger('click')">shipping and billing addresses</a> and <a href="javascript:void(0);" onclick="$('#account-detail-tab').trigger('click')">edit your password and account details.</a></p>
+                                <h5 class="card-title">Total Orders</h5>
+                                <p class="card-text"><?php echo isset($total_orders) ? $total_orders : 0; ?></p>
                             </div>
                         </div>
-                  	</div>
-                  	<div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
-                    	<div class="card">
-                        	<div class="card-header">
-                                <h3>Orders</h3>
-                            </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="card bg-success text-white">
                             <div class="card-body">
-                    			<div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Order</th>
-                                                <th>Date</th>
-                                                <th>Status</th>
-                                                <th>Total</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>#1234</td>
-                                                <td>March 15, 2020</td>
-                                                <td>Processing</td>
-                                                <td>$78.00 for 1 item</td>
-                                                <td><a href="#" class="btn btn-fill-out btn-sm">View</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>#2366</td>
-                                                <td>June 20, 2020</td>
-                                                <td>Completed</td>
-                                                <td>$81.00 for 1 item</td>
-                                                <td><a href="#" class="btn btn-fill-out btn-sm">View</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <h5 class="card-title">Total Revenue</h5>
+                                <p class="card-text">$<?php echo isset($total_revenue) ? number_format($total_revenue, 2) : '0.00'; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Unseen Orders</h5>
+                                <p class="card-text"><?php echo isset($unseen_count) ? $unseen_count : 0; ?></p>
+                                <?php if (isset($unseen_count) && $unseen_count > 0): ?>
+                                    <a href="javascript:void(0);" onclick="$('#orders-tab').trigger('click')" class="btn btn-light btn-sm">View</a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>From your merchant dashboard, you can easily check & view your <a href="javascript:void(0);" onclick="$('#orders-tab').trigger('click')">recent orders</a>, manage your <a href="javascript:void(0);" onclick="$('#products-tab').trigger('click')">products</a>, and <a href="javascript:void(0);" onclick="$('#account-detail-tab').trigger('click')">edit your account details</a>.</p>
+            </div>
+        </div>
+    </div>
+
+
+<style>
+    .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .card-body {
+        padding: 20px;
+    }
+    .card-title {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    .card-text {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .bg-primary { background-color: #007bff !important; }
+    .bg-success { background-color: #28a745 !important; }
+    .bg-warning { background-color: #ffc107 !important; }
+    .text-white { color: white !important; }
+    @media (max-width: 768px) {
+        .col-sm-6 { width: 100%; margin-bottom: 15px; }
+    }
+</style>
+                  	<div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Orders </h3>
+                                        
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Order</th>
+                                                    <th>Date</th>
+                                                    <th>Status</th>
+                                                    <th>Total</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php if (!empty($suborders)): ?>
+                                                    <?php foreach ($suborders as $suborder): ?>
+                                                        <tr class="<?php echo $suborder['condition'] === 'unseen' ? 'unseen-row' : ''; ?>">
+                                                            <td>#<?php echo esc($suborder['suborder_id']); ?></td>
+                                                            <td><?php echo date('F j, Y', strtotime($suborder['order_date'])); ?></td>
+                                                            <td>
+                                                                <span class="badge badge-<?php echo $suborder['status'] === 'pending' ? 'warning' : ($suborder['status'] === 'processing' ? 'info' : ($suborder['status'] === 'shipped' ? 'primary' : ($suborder['status'] === 'delivered' ? 'success' : 'danger'))); ?>">
+                                                                    <?php echo ucfirst($suborder['status']); ?>
+                                                                </span>
+                                                            </td>
+                                                            <td>$<?php echo number_format($suborder['subtotal'], 2); ?> for <?php echo $suborder['item_count']; ?> item<?php echo $suborder['item_count'] != 1 ? 's' : ''; ?></td>
+                                                            <td>
+                                                                <a href="<?php echo base_url('/marchent_account/suborderDetails/' . $suborder['suborder_id']); ?>" class="btn btn-fill-out btn-sm">View</a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                <?php else: ?>
+                                                    <tr>
+                                                        <td colspan="5" class="text-center">No suborders found for your shop.</td>
+                                                    </tr>
+                                                <?php endif; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
+                            <style>
+                            .unseen-row {
+                                font-weight: bold;
+                            }
+
+                            /* Optional: Enhance table styling */
+                            .table {
+                                width: 100%;
+                                border-collapse: collapse;
+                            }
+
+                            .table th,
+                            .table td {
+                                padding: 12px;
+                                text-align: left;
+                                border-bottom: 1px solid #dee2e6;
+                            }
+
+                            .table th {
+                                background-color: #f8f9fa;
+                                font-weight: 600;
+                            }
+
+                            .badge {
+                                padding: 5px 10px;
+                                border-radius: 10px;
+                                font-size: 12px;
+                            }
+
+                            .badge-warning { background-color: #ffc107; color: #212529; }
+                            .badge-info { background-color: #17a2b8; color: #fff; }
+                            .badge-primary { background-color: #007bff; color: #fff; }
+                            .badge-success { background-color: #28a745; color: #fff; }
+                            .badge-danger { background-color: #dc3545; color: #fff; }
+                        </style>
                         </div>
-                  	</div>
 
                       <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
                     	<div class="card">
@@ -327,7 +429,7 @@
                                         <label>Quantity <span class="required">*</span></label>
                                         <input required class="form-control" name="quantity" type="number">
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-4">
                                         <label>Category <span class="required">*</span></label>
                                         <select required class="form-control" name="category_id" id="category_id">
                                             <option value="">Select Category</option>
@@ -338,7 +440,18 @@
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-4">
+                                        <label>SubCategory <span class="required">*</span></label>
+                                        <select required class="form-control" name="subcategory_id" id="subcategory_id">
+                                            <option value="">Select SubCategory</option>
+                                            <?php foreach ($subcategories as $subcategory): ?>
+                                                <option value="<?= esc($subcategory['subcategory_id']) ?>">
+                                                    <?= esc($subcategory['subcategory_name']) ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
                                         <label>Brand <span class="required">*</span></label>
                                         <select required class="form-control" name="brand_id" id="brand">
                                             <option value="">Select Brand</option>
@@ -350,13 +463,153 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label>Dimensions <span class="required">*</span></label>
+                                        <label>Dimensions</label>
                                         <input required class="form-control" name="dimensions" type="text">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label>Weight <span class="required">*</span></label>
+                                        <label>Weight</label>
                                         <input required class="form-control" name="weight" type="text">
                                     </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="sizeSelect">Size <span class="text-danger"></span></label>
+                                        <select required class="form-control" name="size[]" id="sizeSelect" multiple>
+                                            <option value="small">Small</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="large">Large</option>
+                                            <option value="xlarge">XLarge</option>
+                                            <option value="xxlarge">XXLarge</option>
+                                            <option value="xxxlarge">XXXLarge</option>
+                                        </select>
+                                        <div class="selected-options" id="selectedSizes"></div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="targetSelect">Target <span class="text-danger"></span></label>
+                                        <select required class="form-control" name="target[]" id="targetSelect" multiple>
+                                            <option value="women">Women</option>
+                                            <option value="men">Men</option>
+                                            <option value="kids">Kids</option>
+                                        </select>
+                                        <div class="selected-options" id="selectedTargets"></div>
+                                    </div>
+                                    <style>
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            label {
+                font-weight: 600;
+                margin-bottom: 5px;
+                display: block;
+            }
+
+            .form-control {
+                border: 1px solid #f56a6a; /* MarchentEase theme color */
+                border-radius: 4px;
+                padding: 8px;
+                transition: border-color 0.3s ease;
+            }
+
+            .form-control:focus {
+                border-color: #d33f3f;
+                box-shadow: 0 0 5px rgba(245, 106, 106, 0.5);
+                outline: none;
+            }
+
+            select[multiple] {
+                height: 120px; /* Show multiple options at once */
+            }
+
+            select[multiple] option {
+                padding: 5px;
+            }
+
+            .selected-options {
+                margin-top: 10px;
+                font-size: 14px;
+                color: #333;
+                min-height: 20px;
+            }
+
+            .btn-fill-out {
+                background-color: #f56a6a;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            .btn-fill-out:hover {
+                background-color: #d33f3f;
+            }
+
+            .text-danger {
+                color: #d33f3f;
+            }
+
+            .error-message {
+                color: #d33f3f;
+                font-size: 14px;
+                margin-top: 5px;
+                display: none;
+            }
+        </style>
+
+        <!-- Internal JavaScript -->
+        <script>
+            // Function to update selected options display
+            function updateSelectedOptions(selectElement, displayElementId) {
+                const select = document.getElementById(selectElement);
+                const display = document.getElementById(displayElementId);
+                const selectedOptions = Array.from(select.selectedOptions).map(option => option.text);
+                display.textContent = selectedOptions.length > 0 
+                    ? 'Selected: ' + selectedOptions.join(', ') 
+                    : 'No options selected';
+            }
+
+            // Initialize on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                // Update selected sizes and targets on change
+                const sizeSelect = document.getElementById('sizeSelect');
+                const targetSelect = document.getElementById('targetSelect');
+
+                updateSelectedOptions('sizeSelect', 'selectedSizes');
+                updateSelectedOptions('targetSelect', 'selectedTargets');
+
+                sizeSelect.addEventListener('change', function() {
+                    updateSelectedOptions('sizeSelect', 'selectedSizes');
+                });
+
+                targetSelect.addEventListener('change', function() {
+                    updateSelectedOptions('targetSelect', 'selectedTargets');
+                });
+
+                // Form submission validation
+                const form = document.getElementById('checkoutForm');
+                form.addEventListener('submit', function(event) {
+                    const sizes = Array.from(sizeSelect.selectedOptions);
+                    const targets = Array.from(targetSelect.selectedOptions);
+
+                    let hasError = false;
+
+                    if (sizes.length === 0) {
+                        alert('Please select at least one size.');
+                        hasError = true;
+                    }
+
+                    if (targets.length === 0) {
+                        alert('Please select at least one target.');
+                        hasError = true;
+                    }
+
+                    if (hasError) {
+                        event.preventDefault(); // Prevent form submission
+                    }
+                });
+            });
+        </script>
                                     <div class="form-group col-md-12">
                                         <label>Stock Status <span class="required">*</span></label>
                                         <select required class="form-control" name="stock_status">
@@ -582,6 +835,73 @@
 <!-- END FOOTER -->
 
 <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a> 
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Initial subcategories and brands data from PHP
+    var subcategories = <?php echo json_encode($subcategories); ?>;
+    var brands = <?php echo json_encode($brands); ?>;
+
+    // Function to populate subcategory dropdown
+    function updateSubcategories(categoryId) {
+        var $subcategorySelect = $('#subcategory_id');
+        $subcategorySelect.empty(); // Clear existing options
+        $subcategorySelect.append('<option value="">Select SubCategory</option>');
+
+        // Filter subcategories based on selected category
+        var filteredSubcategories = subcategories.filter(function(subcategory) {
+            return subcategory.category_id == categoryId;
+        });
+
+        // Populate dropdown with filtered subcategories
+        $.each(filteredSubcategories, function(index, subcategory) {
+            $subcategorySelect.append(
+                $('<option>', {
+                    value: subcategory.subcategory_id,
+                    text: subcategory.subcategory_name
+                })
+            );
+        });
+    }
+
+    // Function to populate brand dropdown
+    function updateBrands(categoryId) {
+        var $brandSelect = $('#brand');
+        $brandSelect.empty(); // Clear existing options
+        $brandSelect.append('<option value="">Select Brand</option>');
+
+        // Filter brands based on selected category
+        var filteredBrands = brands.filter(function(brand) {
+            return brand.category_id == categoryId;
+        });
+
+        // Populate dropdown with filtered brands
+        $.each(filteredBrands, function(index, brand) {
+            $brandSelect.append(
+                $('<option>', {
+                    value: brand.brand_id,
+                    text: brand.brand_name
+                })
+            );
+        });
+    }
+
+    // Event listener for category change
+    $('#category_id').on('change', function() {
+        var categoryId = $(this).val();
+        updateSubcategories(categoryId);
+        updateBrands(categoryId); // Added to update brands
+    });
+
+    // Initial load (if a category is pre-selected)
+    var initialCategoryId = $('#category_id').val();
+    if (initialCategoryId) {
+        updateSubcategories(initialCategoryId);
+        updateBrands(initialCategoryId);
+    }
+});
+</script>
 
 <!-- Latest jQuery --> 
 <script src="assets/js/jquery-1.12.4.min.js"></script> 

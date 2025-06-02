@@ -151,9 +151,13 @@ if ($logged_in && $user_id) {
                 <div class="col-md-6">
                 	<div class="text-center text-md-right">
                        	<ul class="header_list">
-                        	<li><a href="compare.html"><i class="ti-control-shuffle"></i><span>Compare</span></a></li>
-                            <li><a href="<?php echo site_url('wishlist'); ?>"><i class="ti-heart"></i><span>Wishlist</span></a></li>
-                            <li>
+                        	   <li>
+                                    <a href="contact.html">Contact Us</a>
+                                </li>  
+                                <li>
+                                    <a href="#">About us</a>
+                                </li> 
+                                <li><a href="<?php echo site_url('wishlist/view'); ?>"><i class="ti-heart"></i><span>Wishlist</span></a></li>                            <li>
                                 <?php if (session()->get('logged_in')): ?>
                                     <a href="<?php echo site_url('logout'); ?>"><i class="ti-user"></i><span>Logout</span></a>
                                 <?php else: ?>
@@ -176,279 +180,386 @@ if ($logged_in && $user_id) {
                         <b>MarchentEase</b>
                     </h2>
                 </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"> 
                     <span class="ion-android-menu"></span>
                 </button>
+
+                    <!-- START SEARCH FORM -->
+<div class="product_search_form collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+    <form id="searchForm" action="<?php echo base_url('products-list'); ?>" method="get">
+        <div class="input-group">
+            <input class="form-control" placeholder="Search Product..." required="" type="text" name="term" id="searchInput">
+            <button type="submit" class="search_btn"><i class="linearicons-magnifier"></i></button>
+        </div>
+        <!-- Suggestions Container -->
+        <div id="searchSuggestions" class="suggestions-panel" style="display: none; position: absolute; background: white; border: 1px solid #ddd; z-index: 1000; width: 100%; max-height: 200px; overflow-y: auto;"></div>
+    </form>
+</div>
+<!-- END SEARCH FORM -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#searchInput').on('input', function() {
+        let searchTerm = $(this).val().trim();
+        console.log('Search term entered: ' + searchTerm);
+
+        if (searchTerm.length < 1) {
+            $('#searchSuggestions').hide().empty();
+            return;
+        }
+
+        $.ajax({
+            url: '<?php echo base_url('home/search'); ?>',
+            method: 'GET',
+            data: { term: searchTerm },
+            success: function(response) {
+                console.log('AJAX Response:', response);
+                let suggestions = $('#searchSuggestions');
+                suggestions.empty();
+
+                if (response.length > 0) {
+                    response.forEach(function(item) {
+                        let suggestion = $('<div class="suggestion-item">')
+                            .text(item.name)
+                            .attr('data-value', item.id)
+                            .css('padding', '5px')
+                            .css('cursor', 'pointer')
+                            .hover(
+                                function() { $(this).css('background-color', '#f0f0f0'); },
+                                function() { $(this).css('background-color', 'white'); }
+                            )
+                            .click(function() {
+                                $('#searchInput').val(item.name); // Set the input value to the product name
+                                suggestions.hide(); // Hide the suggestions
+                                // Removed redirect: window.location.href = '<?php echo base_url('product/view/'); ?>' + item.id;
+                            });
+                        suggestions.append(suggestion);
+                    });
+                    suggestions.show();
+                } else {
+                    suggestions.hide();
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error: ' + error);
+                console.log('Status:', status);
+                console.log('Response Text:', xhr.responseText);
+            }
+        });
+    });
+
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('#searchForm').length) {
+            $('#searchSuggestions').hide();
+        }
+    });
+
+    $('#searchForm').on('submit', function(e) {
+        e.preventDefault();
+        let searchTerm = $('#searchInput').val().trim();
+        if (searchTerm) {
+            window.location.href = '<?php echo base_url('products-list?term='); ?>' + encodeURIComponent(searchTerm);
+        }
+    });
+});
+</script>
+
+<style>
+.suggestions-panel {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.suggestion-item {
+    border-bottom: 1px solid #eee;
+}
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+</style>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li >
                             <a class="nav-link active" href="#">Home</a>
                         </li>
+                        
                         <li class="dropdown dropdown-mega-menu">
                             <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Products</a>
                             <div class="dropdown-menu">
                                 <ul class="mega-menu d-lg-flex">
-                                    <li class="mega-menu-col col-lg-3">
-                                        <ul> 
-                                            <li class="dropdown-header">Woman's</li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-list-left-sidebar.html">Vestibulum sed</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-left-sidebar.html">Donec porttitor</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-right-sidebar.html">Donec vitae facilisis</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-list.html">Curabitur tempus</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-load-more.html">Vivamus in tortor</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-menu-col col-lg-3">
-                                        <ul>
-                                            <li class="dropdown-header">Men's</li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-cart.html">Donec vitae ante ante</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="checkout.html">Etiam ac rutrum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="wishlist.html">Quisque condimentum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="compare.html">Curabitur laoreet</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="order-completed.html">Vivamus in tortor</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-menu-col col-lg-3">
-                                        <ul>
-                                            <li class="dropdown-header">Kid's</li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail.html">Donec vitae facilisis</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-left-sidebar.html">Quisque condimentum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-right-sidebar.html">Etiam ac rutrum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec vitae ante ante</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec porttitor</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-menu-col col-lg-3">
-                                        <ul>
-                                            <li class="dropdown-header">Accessories</li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail.html">Donec vitae facilisis</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-left-sidebar.html">Quisque condimentum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-right-sidebar.html">Etiam ac rutrum</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec vitae ante ante</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec porttitor</a></li>
-                                        </ul>
-                                    </li>
+                                    <?php foreach ($categories as $categoryId => $category): ?>
+                                        <li class="mega-menu-col col-lg-3">
+                                            <ul>
+                                                <li class="dropdown-header"><?php echo esc($category['name']); ?></li>
+                                                <?php if (empty($category['subcategories'])): ?>
+                                                    <li>
+                                                        <a class="dropdown-item nav-link nav_item" href="<?php echo site_url('products-list/category/' . $categoryId); ?>">
+                                                            All <?php echo esc($category['name']); ?>
+                                                        </a>
+                                                    </li>
+                                                <?php else: ?>
+                                                    <?php foreach ($category['subcategories'] as $subcategory): ?>
+                                                        <?php
+                                                            // Truncate subcategory name if too long
+                                                            $subcategoryName = $subcategory['name'];
+                                                            if (strlen($subcategoryName) > 25) {
+                                                                $subcategoryName = substr($subcategoryName, 0, 30) . '...';
+                                                            }
+                                                        ?>
+                                                        <li>
+                                                            <a href="<?php echo esc($subcategory['url']); ?>" class="dropdown-item nav-link nav_item <?php echo (isset($selected_subcategory) && $selected_subcategory && $selected_subcategory['subcategory_name'] === $subcategory['name']) ? 'active-subcategory' : ''; ?>">
+                                                                <span class="subcategory_name"><?php echo esc($subcategoryName); ?></span>
+                                                                <span class="subcategory_num">(<?php echo esc($subcategory['product_count']); ?>)</span>
+                                                            </a>
+                                                        </li>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
+                                            </ul>
+                                        </li>
+                                    <?php endforeach; ?>
                                 </ul>
-                                <div class="d-lg-flex menu_banners">
-                                    <div class="col-sm-4">
-                                        <div class="header-banner">
-                                            <img src="assets/images/menu_banner1.jpg" alt="menu_banner1">
-                                            <div class="banne_info">
-                                                <h6>10% Off</h6>
-                                                <h4>New Arrival</h4>
-                                                <a href="#">Shop now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="header-banner">
-                                            <img src="assets/images/menu_banner2.jpg" alt="menu_banner2">
-                                            <div class="banne_info">
-                                                <h6>15% Off</h6>
-                                                <h4>Men's Fashion</h4>
-                                                <a href="#">Shop now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="header-banner">
-                                            <img src="assets/images/menu_banner3.jpg" alt="menu_banner3">
-                                            <div class="banne_info">
-                                                <h6>23% Off</h6>
-                                                <h4>Kids Fashion</h4>
-                                                <a href="#">Shop now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </li>
-                        <!-- <li class="dropdown">
-                            <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Blog</a>
-                            <div class="dropdown-menu dropdown-reverse">
-                                <ul>
-                                    <li>
-                                        <a class="dropdown-item menu-link dropdown-toggler" href="#">Grids</a>
-                                        <div class="dropdown-menu">
-                                            <ul> 
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-three-columns.html">3 columns</a></li>
-                                            	<li><a class="dropdown-item nav-link nav_item" href="blog-four-columns.html">4 columns</a></li> 
-                                            	<li><a class="dropdown-item nav-link nav_item" href="blog-left-sidebar.html">Left Sidebar</a></li> 
-                                            	<li><a class="dropdown-item nav-link nav_item" href="blog-right-sidebar.html">right Sidebar</a></li>
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-standard-left-sidebar.html">Standard Left Sidebar</a></li> 
-                                            	<li><a class="dropdown-item nav-link nav_item" href="blog-standard-right-sidebar.html">Standard right Sidebar</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item menu-link dropdown-toggler" href="#">Masonry</a>
-                                        <div class="dropdown-menu">
-                                            <ul> 
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-masonry-three-columns.html">3 columns</a></li>
-                                           		<li><a class="dropdown-item nav-link nav_item" href="blog-masonry-four-columns.html">4 columns</a></li> 
-                                            	<li><a class="dropdown-item nav-link nav_item" href="blog-masonry-left-sidebar.html">Left Sidebar</a></li> 
-                                            	<li><a class="dropdown-item nav-link nav_item" href="blog-masonry-right-sidebar.html">right Sidebar</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item menu-link dropdown-toggler" href="#">Single Post</a>
-                                        <div class="dropdown-menu">
-                                            <ul> 
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-single.html">Default</a></li>
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-single-left-sidebar.html">left sidebar</a></li>
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-single-slider.html">slider post</a></li> 
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-single-video.html">video post</a></li> 
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-single-audio.html">audio post</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item menu-link dropdown-toggler" href="#">List</a>
-                                        <div class="dropdown-menu">
-                                            <ul> 
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-list-left-sidebar.html">left sidebar</a></li>
-                                                <li><a class="dropdown-item nav-link nav_item" href="blog-list-right-sidebar.html">right sidebar</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li> -->
+
+                        <style>
+                        /* Reset default list and container styles */
+                        .dropdown-menu {
+                            padding: 0 !important;
+                            margin: 0 !important;
+                            width: 100%;
+                            max-width: 100vw;
+                            overflow-x: auto;
+                            box-sizing: border-box !important;
+                        }
+
+                        /* Ensure mega-menu uses full width and wraps if needed */
+                        .mega-menu.d-lg-flex {
+                            display: flex !important;
+                            flex-wrap: wrap;
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            list-style: none !important;
+                            width: 100%;
+                            gap: 0 !important;
+                        }
+
+                        /* Adjust column width and remove all gaps */
+                        .mega-menu-col {
+                            flex: 0 0 auto;
+                            min-width: 200px;
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            box-sizing: border-box;
+                        }
+
+                        /* Remove Bootstrap col-lg-3 padding */
+                        .mega-menu-col.col-lg-3 {
+                            padding-left: 0 !important;
+                            padding-right: 0 !important;
+                        }
+
+                        /* Reset nested ul styles */
+                        .mega-menu-col ul {
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            list-style: none !important;
+                        }
+
+                        /* Style for dropdown items */
+                        .nav_item {
+                            display: block;
+                            max-width: 200px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            padding: 5px 10px !important;
+                            color: #555;
+                            text-decoration: none;
+                        }
+
+                        /* Hover effect for dropdown items */
+                        .nav_item:hover {
+                            color: #FF324D;
+                            text-decoration: underline;
+                        }
+
+                        /* Active subcategory styling */
+                        .nav_item.active-subcategory {
+                            color: #FF324D;
+                            font-weight: bold;
+                            background-color: #f9ebeb;
+                            border-radius: 4px;
+                        }
+
+                        /* Subcategory name and count styling */
+                        .nav_item .subcategory_name {
+                            font-size: 14px;
+                        }
+
+                        .nav_item .subcategory_num {
+                            font-size: 12px;
+                            color: #777;
+                            margin-left: 5px;
+                        }
+                        </style>
+                        
+                        
                         <li class="dropdown dropdown-mega-menu">
-                            <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Brands</a>
-                            <div class="dropdown-menu">
-                                <ul class="mega-menu d-lg-flex">
-                                    <li class="mega-menu-col col-lg-9">
-                                        <ul class="d-lg-flex">
-                                            <li class="mega-menu-col col-lg-4">
-                                                <ul> 
-                                                    <li class="dropdown-header">Shop Page Layout</li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-list.html">shop List view</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-list-left-sidebar.html">shop List Left Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-list-right-sidebar.html">shop List Right Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-load-more.html">Shop Load More</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-menu-col col-lg-4">
-                                                <ul>
-                                                    <li class="dropdown-header">Other Pages</li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-cart.html">Cart</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="checkout.html">Checkout</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="my-account.html">My Account</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="wishlist.html">Wishlist</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="compare.html">compare</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="order-completed.html">Order Completed</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-menu-col col-lg-4">
-                                                <ul>
-                                                    <li class="dropdown-header">Product Pages</li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail.html">Default</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Thumbnails Left</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+    <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Shops</a>
+    <div class="dropdown-menu">
+        <ul class="mega-menu d-lg-flex">
+            <li class="mega-menu-col col-lg-9">
+                <ul class="d-lg-flex">
+                    <?php
+                    // Calculate the number of shops per column
+                    $totalShops = count($shops);
+                    $shopsPerColumn = ceil($totalShops / 3); // Divide into 3 columns
+                    $shopChunks = array_chunk($shops, $shopsPerColumn);
+
+                    // Initialize product model to fetch product counts
+                    $productModel = new \App\Models\Products_model();
+                    ?>
+
+                    <?php foreach ($shopChunks as $chunkIndex => $shopChunk): ?>
+                        <li class="mega-menu-col col-lg-4">
+                            <ul>
+                                <li class="dropdown-header">Shops (<?php echo ($chunkIndex * $shopsPerColumn + 1); ?>-<?php echo min(($chunkIndex + 1) * $shopsPerColumn, $totalShops); ?>)</li>
+                                <?php foreach ($shopChunk as $shop): ?>
+                                    <?php
+                                    // Truncate shop name if too long
+                                    $shopName = $shop['shop_name'];
+                                    if (strlen($shopName) > 25) {
+                                        $shopName = substr($shopName, 0, 30) . '...';
+                                    }
+                                    // Generate shop URL
+                                    $shopUrl = site_url('shop-list/' . $shop['shop_id']);
+                                    // Get product count for the shop
+                                    $productCount = $productModel->where('shop_id', $shop['shop_id'])->countAllResults();
+                                    ?>
+                                    <li>
+                                        <a class="dropdown-item nav-link nav_item" href="<?php echo esc($shopUrl); ?>">
+                                            <span class="shop_name"><?php echo esc($shopName); ?></span>
+                                            <span class="shop_num">(<?php echo esc($productCount); ?>)</span>
+                                        </a>
                                     </li>
-                                    <li class="mega-menu-col col-lg-3">
-                                        <div class="header_banner">
-                                            <div class="header_banner_content">
-                                                <div class="shop_banner">
-                                                    <div class="banner_img overlay_bg_40">
-                                                        <img src="assets/images/shop_banner.jpg" alt="shop_banner"/>
-                                                    </div> 
-                                                    <div class="shop_bn_content">
-                                                        <h5 class="text-uppercase shop_subtitle">New Collection</h5>
-                                                        <h3 class="text-uppercase shop_title">Sale 30% Off</h3>
-                                                        <a href="#" class="btn btn-white rounded-0 btn-sm text-uppercase">Shop Now</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                                <?php endforeach; ?>
+                            </ul>
                         </li>
-                        <li class="dropdown dropdown-mega-menu">
-                            <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Shops</a>
-                            <div class="dropdown-menu">
-                                <ul class="mega-menu d-lg-flex">
-                                    <li class="mega-menu-col col-lg-9">
-                                        <ul class="d-lg-flex">
-                                            <li class="mega-menu-col col-lg-4">
-                                                <ul> 
-                                                    <li class="dropdown-header">Shop Page Layout</li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-list.html">shop List view</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-list-left-sidebar.html">shop List Left Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-list-right-sidebar.html">shop List Right Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-load-more.html">Shop Load More</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-menu-col col-lg-4">
-                                                <ul>
-                                                    <li class="dropdown-header">Other Pages</li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-cart.html">Cart</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="checkout.html">Checkout</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="my-account.html">My Account</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="wishlist.html">Wishlist</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="compare.html">compare</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="order-completed.html">Order Completed</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-menu-col col-lg-4">
-                                                <ul>
-                                                    <li class="dropdown-header">Product Pages</li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail.html">Default</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Thumbnails Left</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-menu-col col-lg-3">
-                                        <div class="header_banner">
-                                            <div class="header_banner_content">
-                                                <div class="shop_banner">
-                                                    <div class="banner_img overlay_bg_40">
-                                                        <img src="assets/images/shop_banner.jpg" alt="shop_banner"/>
-                                                    </div> 
-                                                    <div class="shop_bn_content">
-                                                        <h5 class="text-uppercase shop_subtitle">New Collection</h5>
-                                                        <h3 class="text-uppercase shop_title">Sale 30% Off</h3>
-                                                        <a href="#" class="btn btn-white rounded-0 btn-sm text-uppercase">Shop Now</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                    <?php endforeach; ?>
+                </ul>
+            </li>
+            <li class="mega-menu-col col-lg-3">
+                <div class="header_banner">
+                    <div class="header_banner_content">
+                        <div class="shop_banner">
+                            <div class="banner_img overlay_bg_40">
+                                <img src="assets/images/shop_banner.jpg" alt="shop_banner"/>
+                            </div> 
+                            <div class="shop_bn_content">
+                                <h5 class="text-uppercase shop_subtitle">New Collection</h5>
+                                <h3 class="text-uppercase shop_title">Sale 30% Off</h3>
+                                <a href="#" class="btn btn-white rounded-0 btn-sm text-uppercase">Shop Now</a>
                             </div>
-                        </li>
-                        <li>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</li>
+
+<style>
+/* Reset default list and container styles */
+.dropdown-menu {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: auto;
+    box-sizing: border-box !important;
+}
+
+/* Ensure mega-menu uses full width and wraps if needed */
+.mega-menu.d-lg-flex {
+    display: flex !important;
+    flex-wrap: wrap;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    width: 100%;
+    gap: 0 !important;
+}
+
+/* Adjust column width and remove all gaps */
+.mega-menu-col {
+    flex: 0 0 auto;
+    min-width: 200px;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+}
+
+/* Remove Bootstrap col-lg-3 and col-lg-9 padding */
+.mega-menu-col.col-lg-3,
+.mega-menu-col.col-lg-9 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Remove padding for nested col-lg-4 */
+.mega-menu-col.col-lg-4 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Reset nested ul styles */
+.mega-menu-col ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+/* Style for dropdown items */
+.nav_item {
+    display: block;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px 10px !important;
+    color: #555;
+    text-decoration: none;
+}
+
+/* Hover effect for dropdown items */
+.nav_item:hover {
+    color: #FF324D;
+    text-decoration: underline;
+}
+
+/* Shop name and count styling */
+.nav_item .shop_name {
+    font-size: 14px;
+}
+
+.nav_item .shop_num {
+    font-size: 12px;
+    color: #777;
+    margin-left: 5px;
+}
+</style>
+
+                        
+                        <!-- <li>
                             <a class="nav-link nav_item" href="contact.html">Contact Us</a>
-                        </li> 
-                        <li>
+                        </li>  -->
+                        <!-- <li>
                             <a class="nav-link" href="#">About us</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <ul class="navbar-nav attr-nav align-items-center">
-                    <li><a href="javascript:void(0);" class="nav-link search_trigger"><i class="linearicons-magnifier"></i></a>
-                        <div class="search_wrap">
-                            <span class="close-search"><i class="ion-ios-close-empty"></i></span>
-                            <form>
-                                <input type="text" placeholder="Search" class="form-control" id="search_input">
-                                <button type="submit" class="search_icon"><i class="ion-ios-search-strong"></i></button>
-                            </form>
-                        </div><div class="search_overlay"></div>
-                    </li>
+                    
 
                     <?php if (session()->get('logged_in')): ?>
                         <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#" data-toggle="dropdown"><i class="linearicons-cart"></i><span class="cart_count"><?php echo $cart_count; ?></span></a>
@@ -501,8 +612,6 @@ if ($logged_in && $user_id) {
                             </div>
                         </div>
                     </li>
-
-
                     <?php else: ?>
                         <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#" data-toggle="dropdown"><i class="linearicons-cart"></i></a>
                             <div class="cart_box dropdown-menu dropdown-menu-centered">
@@ -641,70 +750,112 @@ if ($logged_in && $user_id) {
                 	<div class="tab-pane fade show active" id="arrival" role="tabpanel" aria-labelledby="arrival-tab">
                         <div class="row shop_container">
                         <div class="section">
-                    <div class="container">
-                        <div class="row">
-                            <?php if (empty($products)): ?>
-                                <div class="col-12">
-                                    <p>No products available.</p>
-                                </div>
-                            <?php else: ?>
-                                <?php foreach ($products as $product): ?>
-                                    <div class="col-lg-3 col-md-4 col-6">
-                                        <div class="product">
-                                            <div class="product_img">
-                                                <a href="<?php echo site_url('product_details/' . $product['product_id']); ?>">
-                                                    <img 
-                                                        src="<?php echo !empty($product['image']) ? base_url('' . esc($product['image'])) : base_url('assets/images/default_product.jpg'); ?>" 
-                                                        alt="<?php echo esc($product['product_name']); ?>" 
-                                                        style="width: 100%; height: 250px; object-fit: cover;"
-                                                    >
-                                                </a>
-                                                <div class="product_action_box">
-                                                    <ul class="list_none pr_action_btn">
-                                                        <li class="add-to-cart">
-                                                            <a href="<?php echo site_url('cart/add/' . $product['product_id']); ?>">
-                                                                <i class="icon-basket-loaded"></i> Add To Cart
-                                                            </a>
-                                                        </li>
-                                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="product_info">
-                                                <h6 class="product_title">
-                                                    <a href="<?php echo site_url('product_details/' . $product['product_id']); ?>">
-                                                        <?php echo esc($product['product_name']); ?>
-                                                    </a>
-                                                </h6>
-                                                <div class="product_price">
-                                                    <span class="price">$<?php echo number_format($product['price'], 2); ?></span>
-                                                </div>
-                                                <div class="rating_wrap">
-                                                    <div class="rating">
-                                                        <div class="product_rate" style="width:68%"></div>
-                                                    </div>
-                                                    <span class="rating_num">(15)</span>
-                                                </div>
-                                                <div class="pr_desc" style="display: block !important; visibility: visible !important;">
-                                                    <a href="<?php echo site_url('shop_details/' . $product['shop_id']); ?>">
-                                                        <p>Shop: <?php echo esc($product['shop_name']) ?: 'None'; ?></p>
-                                                    </a>
-                                                </div>
-                                                <div class="pr_switch_wrap">
-                                                    <div class="product_color_switch">
-                                                        <span class="active" data-color="#847764"></span>
-                                                        <span data-color="#0393B5"></span>
-                                                        <span data-color="#DA323F"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <?php if (empty($products)): ?>
+                                    <div class="col-12">
+                                        <p>No products available.</p>
                                     </div>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </div>
+                                <?php else: ?>
+                                    <div class="row">
+                                        <?php 
+                                        // Limit to the latest 8 products
+                                        $latestProducts = array_slice($products, 0, 8);
+                                        foreach ($latestProducts as $product): 
+                                        ?>
+                                            <div class="col-lg-3 col-md-4 col-6 mb-4">
+                                                <div class="product">
+                                                    <div class="product_img">
+                                                        <div class="product-image-wrapper">
+                                                            <a href="<?php echo site_url('product_details/' . $product['product_id']); ?>">
+                                                                <img 
+                                                                    src="<?php echo base_url(esc($product['image'])); ?>" 
+                                                                    alt="<?php echo esc($product['product_name']); ?>" 
+                                                                    class="product-image"
+                                                                    loading="lazy"
+                                                                >
+                                                            </a>
+                                                        </div>
+                                                        <div class="product_action_box">
+                                                            <ul class="list_none pr_action_btn">
+                                                                <li class="add-to-cart">
+                                                                    <a href="<?php echo site_url('cart/add/' . $product['product_id']); ?>">
+                                                                        <i class="icon-basket-loaded"></i> Add To Cart
+                                                                    </a>
+                                                                </li>
+                                                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
+                                                                <li>
+                                                                    <a href="<?php echo site_url('wishlist/add/' . $product['product_id']); ?>">
+                                                                        <i class="icon-heart"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product_info">
+                                                        <h6 class="product_title">
+                                                            <a href="<?php echo site_url('product_details/' . $product['product_id']); ?>">
+                                                                <?php echo esc($product['product_name']); ?>
+                                                            </a>
+                                                        </h6>
+                                                        <div class="product_price">
+                                                            <span class="price">$<?php echo number_format($product['price'], 2); ?></span>
+                                                        </div>
+                                                        <div class="rating_wrap">
+                                                            <div class="rating">
+                                                                <div class="product_rate" style="width:68%"></div>
+                                                            </div>
+                                                            <span class="rating_num">(15)</span>
+                                                        </div>
+                                                        <div class="pr_desc" style="display: block !important; visibility: visible !important;">
+                                                            <a href="<?php echo site_url('shop_details/' . $product['shop_id']); ?>">
+                                                                <p>Shop: <?php echo esc($product['shop_name'] ?: 'None'); ?></p>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif; ?>
+
+                                <style>
+                                .product-image-wrapper {
+                                    position: relative;
+                                    width: 100%;
+                                    height: 250px; /* Fixed height for consistency */
+                                    overflow: hidden;
+                                    border-radius: 8px; /* Rounded corners for a modern look */
+                                    background-color: #f5f5f5; /* Light gray background as a fallback */
+                                }
+
+                                .product-image {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover; /* Ensures image covers the area without distortion */
+                                    object-position: center; /* Centers the image */
+                                    display: block;
+                                    transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+                                }
+
+                                .product-image-wrapper:hover .product-image {
+                                    transform: scale(1.05); /* Slight zoom on hover for interactivity */
+                                }
+
+                                /* Ensure responsiveness */
+                                @media (max-width: 768px) {
+                                    .product-image-wrapper {
+                                        height: 200px; /* Smaller height on mobile */
+                                    }
+                                }
+
+                                @media (max-width: 576px) {
+                                    .product-image-wrapper {
+                                        height: 150px; /* Even smaller for very small screens */
+                                    }
+                                }
+                                </style>
+                            </div>
                     </div>
                     </div>
 
@@ -2026,237 +2177,152 @@ if ($logged_in && $user_id) {
 
 <!-- START SECTION SHOPS -->
 <div class="section">
-	<div class="container">
-    	<div class="row justify-content-center">
-			<div class="col-md-6">
-            	<div class="heading_s1 text-center">
-                	<h2>Shops</h2>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="heading_s1 text-center">
+                    <h2>Shops</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-            	<div class="product_slider carousel_slider owl-carousel owl-theme nav_style1" data-loop="true" data-dots="false" data-nav="true" data-margin="20" data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}'>
-                	<div class="item">
-                        <div class="product">
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img1.jpg" alt="product_img1">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">Blue Dress For Woman</a></h6>
-                                <div class="product_price">
-                                    <span class="price">$45.00</span>
-                                    <del>$55.25</del>
-                                    <div class="on_sale">
-                                        <span>35% Off</span>
+                <div class="product_slider carousel_slider owl-carousel owl-theme nav_style1" data-loop="true" data-dots="false" data-nav="true" data-margin="20" data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}'>
+                    <?php foreach ($shops as $shop): ?>
+                        <div class="item">
+                            <div class="shop-card">
+                                <div class="shop_img">
+                                    <div class="shop-image-wrapper">
+                                        <a href="<?php echo site_url('shop_details/' . $shop['shop_id']); ?>">
+                                            <img 
+                                                src="<?php echo base_url('assets/uploads/shops/' . esc($shop['shop_icon'])); ?>" 
+                                                alt="<?php echo esc($shop['shop_name']); ?>" 
+                                                class="shop-image"
+                                                loading="lazy"
+                                            >
+                                        </a>
+                                    </div>
+                                    <div class="shop_action_box">
+                                        <ul class="list_none pr_action_btn">
+                                            <li>
+                                                <a href="<?php echo site_url('shop_details/' . $shop['shop_id']); ?>">
+                                                    <i class="icon-store"></i> Visit Shop
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:80%"></div>
+                                <div class="shop_info">
+                                    <h6 class="shop_title">
+                                        <a href="<?php echo site_url('shop_details/' . $shop['shop_id']); ?>">
+                                            <?php echo esc($shop['shop_name']); ?>
+                                        </a>
+                                    </h6>
+                                    <div class="shop_desc">
+                                        <p class="description"><?php echo esc($shop['shop_description'] ?? 'Discover amazing products at ' . $shop['shop_name'] . '!'); ?></p>
                                     </div>
-                                    <span class="rating_num">(21)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        <span class="active" data-color="#87554B"></span>
-                                        <span data-color="#333333"></span>
-                                        <span data-color="#DA323F"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img2.jpg" alt="product_img2">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">Lether Gray Tuxedo</a></h6>
-                                <div class="product_price">
-                                    <span class="price">$55.00</span>
-                                    <del>$95.00</del>
-                                    <div class="on_sale">
-                                        <span>25% Off</span>
-                                    </div>
-                                </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:68%"></div>
-                                    </div>
-                                    <span class="rating_num">(15)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        <span class="active" data-color="#847764"></span>
-                                        <span data-color="#0393B5"></span>
-                                        <span data-color="#DA323F"></span>
-                                    </div>
+
+                                    <style>
+                                    .shop_desc {
+                                        max-height: 40px; /* Adjust based on line height and number of lines (e.g., 20px per line * 2 lines) */
+                                        overflow: hidden;
+                                    }
+
+                                    .description {
+                                        display: -webkit-box;
+                                        -webkit-line-clamp: 2; /* Limit to 2 lines */
+                                        -webkit-box-orient: vertical;
+                                        line-clamp: 2; /* Standard property for modern browsers */
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        line-height: 20px; /* Adjust based on your font size */
+                                        margin: 0;
+                                    }
+                                    </style>
+
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <span class="pr_flash">New</span>
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img3.jpg" alt="product_img3">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">woman full sliv dress</a></h6>
-                                <div class="product_price">
-                                    <span class="price">$68.00</span>
-                                    <del>$99.00</del>
-                                </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:87%"></div>
-                                    </div>
-                                    <span class="rating_num">(25)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        <span class="active" data-color="#333333"></span>
-                                        <span data-color="#7C502F"></span>
-                                        <span data-color="#2F366C"></span>
-                                        <span data-color="#874A3D"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img4.jpg" alt="product_img4">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">light blue Shirt</a></h6>
-                                <div class="product_price">
-                                    <span class="price">$69.00</span>
-                                    <del>$89.00</del>
-                                    <div class="on_sale">
-                                        <span>20% Off</span>
-                                    </div>
-                                </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:70%"></div>
-                                    </div>
-                                    <span class="rating_num">(22)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        <span class="active" data-color="#333333"></span>
-                                        <span data-color="#A92534"></span>
-                                        <span data-color="#B9C2DF"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="product_img">
-                                <a href="shop-product-detail.html">
-                                    <img src="assets/images/product_img5.jpg" alt="product_img5">
-                                </a>
-                                <div class="product_action_box">
-                                    <ul class="list_none pr_action_btn">
-                                        <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                        <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">blue dress for woman</a></h6>
-                                <div class="product_price">
-                                    <span class="price">$45.00</span>
-                                    <del>$55.25</del>
-                                    <div class="on_sale">
-                                        <span>35% Off</span>
-                                    </div>
-                                </div>
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:80%"></div>
-                                    </div>
-                                    <span class="rating_num">(21)</span>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                </div>
-                                <div class="pr_switch_wrap">
-                                    <div class="product_color_switch">
-                                        <span class="active" data-color="#87554B"></span>
-                                        <span data-color="#333333"></span>
-                                        <span data-color="#5FB7D4"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
-		</div>
+        </div>
     </div>
 </div>
 <!-- END SECTION SHOPS -->
+
+<style>
+.shop-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Fixed height for consistency */
+    overflow: hidden;
+    border-radius: 8px; /* Rounded corners for a modern look */
+    background-color: #f5f5f5; /* Light gray background as a fallback */
+}
+
+.shop-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    object-position: center; /* Centers the image */
+    display: block;
+    transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+}
+
+.shop-image-wrapper:hover .shop-image {
+    transform: scale(1.05); /* Slight zoom on hover for interactivity */
+}
+
+.shop_info {
+    padding: 15px;
+    text-align: center;
+}
+
+.shop_title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.shop_desc p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.shop_action_box {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.shop_img:hover .shop_action_box {
+    opacity: 1;
+}
+
+.shop_action_box ul li a {
+    background-color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+    .shop-image-wrapper {
+        height: 200px; /* Smaller height on mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .shop-image-wrapper {
+        height: 150px; /* Even smaller for very small screens */
+    }
+}
+</style>
 
 <!-- START SECTION Brands -->
 <div class="section">
